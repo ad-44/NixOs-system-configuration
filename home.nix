@@ -2,7 +2,7 @@
 
 {
   home.username = "antoine";
-  home.Directory = "/home/antoine";
+  home.homeDirectory = "/home/antoine";
 
   home.packages = with pkgs; [
   # Tryout
