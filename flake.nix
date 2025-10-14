@@ -8,10 +8,19 @@
   };
 
   outputs = { self, nixpkgs }: {
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      specialArgs = { inherit inputs; };
+      modules = [
+         ./configuration.nix
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-
-    packages.x86_64-linux.default = self.packages.x86_64-linux.hello;
+         home-manager.nixosModules.home-manager
+         {
+           home-manager.useGlobalPkgs = true ;
+           home-manager.useUserPackages = true ;
+           home-manager.users.antoine = import ./home.nix;
+         }
+        ];
+    }; 
 
   };
 }
