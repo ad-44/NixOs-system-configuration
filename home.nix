@@ -9,6 +9,7 @@
     neofetch
     foot
     starship
+    git
   ];
 
   programs.foot = {
@@ -29,11 +30,16 @@
   };
 
   programs.starship = {
-    enable = false;
+    enable = true;
     enableBashIntegration = true;
     settings = {
     };
   };
-  
+
+  programs.git = {
+    enable = true;
+    userName = "ad-44";
+    userEmail = "antoine.debille@gmail.com";
+    };
   home.stateVersion = "25.05";
 }
