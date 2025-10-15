@@ -13,10 +13,9 @@
 
   programs.foot = {
     enable = true;
-    theme = "catppuccin-mocha";
     settings = {
       main = {
-        font = "Mononoki:pixelsize=12";
+        font = "JetBrainsMono Nerd Font:pixelsize=16";
       };
     };
   };
@@ -30,8 +29,10 @@
   };
 
   programs.starship = {
-    enable = true;
-    presets = ["catppuccin_mocha"];
+    enable = false;
+    enableBashIntegration = true;
+    settings = {
+    };
   };
   
   home.stateVersion = "25.05";

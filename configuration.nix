@@ -95,7 +95,8 @@
   #   enableSSHSupport = true;
   # };
   fonts.packages = with pkgs; [
-    nerd-fonts.mononoki
+    fira-code
+    nerd-fonts.jetbrains-mono
   ];
   # List services that you want to enable:
 
