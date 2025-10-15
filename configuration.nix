@@ -94,7 +94,9 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
+  fonts.packages = with pkgs; [
+    nerd-fonts.mononoki
+  ];
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
