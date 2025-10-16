@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "antoine";
@@ -12,34 +12,10 @@
     git
   ];
 
-  programs.foot = {
-    enable = true;
-    settings = {
-      main = {
-        font = "JetBrainsMono Nerd Font:pixelsize=16";
-      };
-    };
-  };
-  
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
-    bashrcExtra = ''
-      eval "$(starship init bash)"
-    '';
-  };
+  #Import pkgs configurations
+  imports = [
+    ./pkgs-config
+  ];  
 
-  programs.starship = {
-    enable = true;
-    enableBashIntegration = true;
-    settings = {
-    };
-  };
-
-  programs.git = {
-    enable = true;
-    userName = "ad-44";
-    userEmail = "antoine.debille@gmail.com";
-    };
-  home.stateVersion = "25.05";
+   home.stateVersion = "25.05";
 }
