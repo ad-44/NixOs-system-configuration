@@ -98,6 +98,16 @@
     fira-code
     nerd-fonts.jetbrains-mono
   ];
+  # Reducing disk usage
+  boot.loader.systemd-boot.configurationLimit = 10;
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 1w";
+  };
+
+  nix.settings.auto-optimise-store = true;
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
