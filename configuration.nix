@@ -87,6 +87,7 @@
   programs.nh.enable = true;
   programs.git.enable = true;
   services.displayManager.ly.enable = true;
+  programs.ssh.startAgent = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
