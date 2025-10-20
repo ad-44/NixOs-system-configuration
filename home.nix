@@ -10,6 +10,10 @@
     foot
     starship
     git
+    helix
+
+  # GUI
+  
   ];
 
   #Import pkgs configurations

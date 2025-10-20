@@ -71,15 +71,8 @@
   environment.systemPackages = with pkgs; [
    # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   wget
-  foot
   niri
   fuzzel
-  firefox
-  nh
-  swaynotificationcenter
-  git
-  python313
-  python313Packages.ipython
   ly
   ];
   programs.niri.enable = true;

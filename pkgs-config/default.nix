@@ -7,5 +7,6 @@
     ./git.nix
     ./starship.nix
     ./helix.nix
+    ./firefox.nix
   ];
 }
