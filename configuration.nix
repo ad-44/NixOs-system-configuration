@@ -69,7 +69,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+   # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   wget
   foot
   niri
@@ -78,7 +78,6 @@
   nh
   swaynotificationcenter
   git
-  helix
   python313
   python313Packages.ipython
   ly

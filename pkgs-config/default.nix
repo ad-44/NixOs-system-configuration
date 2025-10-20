@@ -6,5 +6,6 @@
     ./foot.nix
     ./git.nix
     ./starship.nix
+    ./helix.nix
   ];
 }
