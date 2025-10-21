@@ -11,12 +11,18 @@
     starship
     git
     helix
+
+  # GUI
+    swww
+    
   ];
 
   #Import pkgs configurations
   imports = [
     ./pkgs-config
-  ];  
+  ];
+
+  services.swww.enable = true;  
 
    home.stateVersion = "25.05";
 }
