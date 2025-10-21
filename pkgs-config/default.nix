@@ -8,5 +8,6 @@
     ./starship.nix
     ./helix.nix
     ./firefox.nix
+    ./stylix.nix
   ];
 }

@@ -3,10 +3,10 @@
 {
   programs.foot = {
     enable = true;
-    settings = {
-      main = {
-        font = "JetBrainsMono Nerd Font:pixelsize=16";
-      };  
-    };
+    # settings = {
+      # main = {
+        # font = "JetBrainsMono Nerd Font:pixelsize=16";
+      # };  
+    # };
   };
 }
