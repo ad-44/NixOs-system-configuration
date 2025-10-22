@@ -12,18 +12,17 @@
     };
 
     zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs"; 
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, stylix, zen-browser, ... }@inputs: {
     nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
          ./configuration.nix
          stylix.nixosModules.stylix
-         
          home-manager.nixosModules.home-manager
          {
            home-manager.useGlobalPkgs = true ;

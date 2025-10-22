@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{inputs, config, pkgs, ... }:
 
 {
   imports =
@@ -73,6 +73,7 @@
   wget
   niri
   ly
+  inputs.zen-browser.packages."${system}".twilight-official
   ];
   programs.niri.enable = true;
   programs.nh.enable = true;
@@ -83,7 +84,7 @@
   stylix = {
     enable = true;
     image = ./pkgs-config/wallpaper.jpg;
-    # polarity = "dark";
+    polarity = "dark";
   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

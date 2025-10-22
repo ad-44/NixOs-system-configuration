@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, lib, ... }:
+{ inputs, config, pkgs, lib, zen-browser, ... }:
 
 {
   home.username = "antoine";
@@ -23,6 +23,6 @@
   ];
 
   services.swww.enable = true;  
-
-   home.stateVersion = "25.05";
+    
+  home.stateVersion = "25.05";
 }
