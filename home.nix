@@ -14,7 +14,7 @@
 
   # GUI
     swww
-    
+    fuzzel
   ];
 
   #Import pkgs configurations

@@ -9,5 +9,6 @@
     ./helix.nix
     ./firefox.nix
     ./stylix.nix
+    ./fuzzel.nix
   ];
 }
