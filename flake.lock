@@ -205,7 +205,8 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "zen-browser": "zen-browser"
       }
     },
     "stylix": {
@@ -358,6 +359,26 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1761105987,
+        "narHash": "sha256-d01CGcdNlsqIn4ncGCWHM0Velnii/Ggef1iybQvEOfc=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "e7d9fefd8665be5d4c77466140f21a15f6d29e93",
+        "type": "github"
+      },
+      "original": {
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
