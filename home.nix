@@ -15,6 +15,7 @@
   # GUI
     swww
     fuzzel
+    zen-browser.packages."${system}".twilight-official
   ];
 
   #Import pkgs configurations
@@ -23,6 +24,6 @@
   ];
 
   services.swww.enable = true;  
-    
+      
   home.stateVersion = "25.05";
 }

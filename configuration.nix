@@ -73,7 +73,6 @@
   wget
   niri
   ly
-  inputs.zen-browser.packages."${system}".twilight-official
   ];
   programs.niri.enable = true;
   programs.nh.enable = true;
