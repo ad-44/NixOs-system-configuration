@@ -15,7 +15,7 @@
   # GUI
     swww
     fuzzel
-    zen-browser.packages."${system}".twilight-official
+    inputs.zen-browser.packages."${system}".twilight-official
   ];
 
   #Import pkgs configurations

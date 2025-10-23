@@ -24,7 +24,4 @@
     
   };
 
-  stylix = {
-    polarity = "dark";
-  };
-}
+}  
