@@ -82,8 +82,9 @@
 
   stylix = {
     enable = true;
-    image = ./pkgs-config/wallpaper.jpg;
+    image = ./pkgs-config/space.jpg;
     polarity = "dark";
+    override = {base00 = "000000";};
    };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
