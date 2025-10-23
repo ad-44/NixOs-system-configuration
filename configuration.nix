@@ -82,7 +82,7 @@
 
   stylix = {
     enable = true;
-    image = ./pkgs-config/space.jpg;
+    image = ./Wallpapers/wallpaper.jpg;
     polarity = "dark";
     override = {base00 = "000000";};
    };
