@@ -77,17 +77,21 @@
   xwayland-satellite
   networkmanager
   networkmanagerapplet
+  blueman
   ];
 
   #IME workaround for electron app
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   
+  #Pragrams and services enable
   programs.niri.enable = true;
   programs.git.enable = true;
   services.displayManager.ly.enable = true;
   programs.ssh.startAgent = true;
   programs.xwayland.enable = true;
-  
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+    
   stylix = {
     enable = true;
     image = ./Wallpapers/wallpaper.jpg;

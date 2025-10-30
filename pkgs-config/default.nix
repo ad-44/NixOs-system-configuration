@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./waybar.nix
     ./bash.nix
     ./foot.nix
     ./git.nix

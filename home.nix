@@ -27,6 +27,7 @@
     swaynotificationcenter
     spotify-player
     spotify
+    waybar
   ];
 
   #Import pkgs configurations
