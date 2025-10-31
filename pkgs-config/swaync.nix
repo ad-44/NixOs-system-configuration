@@ -44,7 +44,6 @@
         "mpris"
         "volume"
         "backlight"
-        "buttons-grid"
         "menubar#label"
       ];
       widget-config = {
@@ -120,6 +119,24 @@
              } 
             ];
           };
+          "buttons#network-button" = {
+            position = "left";
+            actions = [
+             {
+              label = " ";
+              command = "swaync-client -t -sw;nm-connection-editor";
+             }
+            ];              
+          };
+          "buttons#bluetooth-button" = {
+            position = "left";
+            actions = [
+              {
+                label = "󰂯";
+                command = "swaync-client -t -sw;blueman-manager";
+              }
+            ];
+          };
         };
           
       };      
@@ -164,8 +181,23 @@
       }
 
       .widget-menubar>box>.menu-button-bar>button {
-        margin: 3px;
-        font-size: 15px;
+        margin: 5px;
+        background: transparent;
+      }
+
+      .widget-menubar>box>.menu-button-bar>button:hover {
+        background-color: @base01;
+      }
+
+      .network-button>button,
+      .bluetooth-button>button {
+        margin: 5px;
+        background: transparent;
+      }
+
+      .network-button>button:hover,
+      .bluetooth-button>button:hover {
+        background-color: @base01;
       }
     '';
   };
