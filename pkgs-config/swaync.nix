@@ -45,6 +45,7 @@
         "volume"
         "backlight"
         "buttons-grid"
+        "menubar#label"
       ];
       widget-config = {
         
@@ -78,7 +79,7 @@
         };
 
         "buttons-grid" = {
-          "buttons-per-row" = 3;
+          "buttons-per-row" = 2;
           actions = [
             {
               label = " ";
@@ -91,29 +92,36 @@
               type = "button";
               active = true;
               command = "swaync-client -t -sw;blueman-manager";
-            }
-            {             
-              label = "⏻";
-              type = "normal";
-              command = "systemctl poweroff";
-            }
-            {
-              label = "";
-              type = "normal";
-              command = "systemctl reboot";
-            }
-            {
-              label = "󰗽";
-              type = "normal";
-              command = "niri msg action quit";
-            }
-            {
-              label = "󰽥";
-              type = "normal";
-              command = "systemctl suspend";
-            }             
+            }                
           ]; 
-        };  
+        };
+
+        "menubar#label" = {
+          "menu#power-buttons" ={
+            label = "⏻";
+            position = "right";
+            animation-type = "slide_up";
+            actions = [
+             {             
+              label = "⏻  Shutdown";
+              command = "systemctl poweroff";
+             }
+             {
+              label = "  Reboot";
+              command = "systemctl reboot";
+             }
+             {
+              label = "󰗽  Logout";
+              command = "niri msg action quit";
+             }
+             {
+              label = "  Lock";
+              command = "systemctl suspend";
+             } 
+            ];
+          };
+        };
+          
       };      
     };
     style = ''
@@ -121,7 +129,7 @@
           background: transparent;
       }
 
-      .widget-buttons-grid flowboxchild {
+      .widget-buttons-grid>flowbox>flowboxchild {
           padding: 0px;
           margin: 0px;
       }
@@ -130,7 +138,6 @@
           border-radius: 4px;
           border : 1px solid  @base0D;
           background-color: @base00;
-          margin: 4px;
       }
 
       .widget-buttons-grid flowboxchild > button:hover {
@@ -154,6 +161,11 @@
       .widget-volume,
       .widget-backlight {
         background: transparent;
+      }
+
+      .widget-menubar>box>.menu-button-bar>button {
+        margin: 3px;
+        font-size: 15px;
       }
     '';
   };

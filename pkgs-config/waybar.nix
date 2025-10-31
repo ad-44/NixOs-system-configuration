@@ -7,7 +7,7 @@
       mainbar = {
         layer = "top";
         exclusive = false;
-        start_hidden = false;
+        start_hidden = true;
         reload_style_on_change = true;
         margin-top = 233;
         modules-center = [
@@ -94,8 +94,8 @@
       }";
       Restart = "on-failure";
     };
-    # Install = {
-      # WantedBy = ["multi-user.target"];
-    # };
+     Install = {
+       WantedBy = ["multi-user.target"];
+     };
   };
 }
