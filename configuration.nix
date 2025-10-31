@@ -78,6 +78,8 @@
   networkmanager
   networkmanagerapplet
   blueman
+  jq
+  killall
   ];
 
   #IME workaround for electron app
