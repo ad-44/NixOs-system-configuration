@@ -76,25 +76,7 @@
           show-album-art = "always";
           loop-carousel = true;
         };
-
-        "buttons-grid" = {
-          "buttons-per-row" = 2;
-          actions = [
-            {
-              label = " ";
-              type = "button";
-              active = true;
-              command = "swaync-client -t -sw;nm-connection-editor";
-            }
-            {
-              label = "󰂯";
-              type = "button";
-              active = true;
-              command = "swaync-client -t -sw;blueman-manager";
-            }                
-          ]; 
-        };
-
+        
         "menubar#label" = {
           "menu#power-buttons" ={
             label = "⏻";
@@ -142,39 +124,6 @@
       };      
     };
     style = ''
-      .widget-buttons-grid {
-          background: transparent;
-      }
-
-      .widget-buttons-grid>flowbox>flowboxchild {
-          padding: 0px;
-          margin: 0px;
-      }
-
-      .widget-buttons-grid flowboxchild > button {
-          border-radius: 4px;
-          border : 1px solid  @base0D;
-          background-color: @base00;
-      }
-
-      .widget-buttons-grid flowboxchild > button:hover {
-          background-color: @base01;
-      }
-
-      .widget-buttons-grid flowboxchild > button.toggle:checked {
-          background-color: @base01;
-      }
-
-      .widget-buttons-grid flowboxchild > button.toggle:checked:hover {
-          background-color: @base02;
-      }
-
-      .widget-buttons-grid flowboxchild:last-child > button {
-      }
-
-      .widget-buttons-grid flowboxchild:first-child > button {
-      }
-
       .widget-volume,
       .widget-backlight {
         background: transparent;
@@ -185,6 +134,10 @@
         background: transparent;
       }
 
+      .widget-menubar>box>.menu-button-bar>button>label {
+        font-size: 16px;
+      }
+
       .widget-menubar>box>.menu-button-bar>button:hover {
         background-color: @base01;
       }
@@ -193,6 +146,11 @@
       .bluetooth-button>button {
         margin: 5px;
         background: transparent;
+      }
+
+      .network-button>button>label,
+      .bluetooth-button>button>label {
+        font-size: 16px;
       }
 
       .network-button>button:hover,
