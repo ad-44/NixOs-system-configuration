@@ -12,6 +12,7 @@
     git
     helix
     btop
+    yazi
 
   # System
     xdg-desktop-portal-gnome
@@ -28,6 +29,8 @@
     spotify-player
     spotify
     waybar
+    mpv
+    zed-editor
   ];
 
   #Import pkgs configurations
@@ -39,6 +42,9 @@
   services.swww.enable = true;  
   programs.spotify-player.enable = true;
   services.network-manager-applet.enable = true;
+  programs.yazi.enable = true;
+  programs.mpv.enable = true;
+  programs.zed-editor.enable = true;
        
   home.stateVersion = "25.05";
 }
