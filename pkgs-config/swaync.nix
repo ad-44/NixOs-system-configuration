@@ -38,8 +38,9 @@
         };
       };
       widgets = [
-        "title"
+        "title#Notifications"
         "notifications"
+        "title#quick-settings"
         "dnd"
         "mpris"
         "volume"
@@ -48,10 +49,15 @@
       ];
       widget-config = {
         
-        title = {
-          text = "Notifications Center";
+       "title#Notifications" = {
+          text = "  Notifications";
           clear-all-button = true;
           button-text = "󰆴";
+        };
+
+        "title#quick-settings" = {
+          text = "  Quick Settings";
+          clear-all-button = false;
         };
 
         dnd = {
@@ -156,6 +162,16 @@
       .network-button>button:hover,
       .bluetooth-button>button:hover {
         background-color: @base01;
+      }
+
+      .widget-title>button {
+        background: transparent;
+        border: 1px solid @base00;
+      }
+
+      .widget-title>button>label,
+      .widget-title>label {
+        font-size: 18px;
       }
     '';
   };
