@@ -69,7 +69,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   wget
   niri
   ly
@@ -80,12 +79,15 @@
   blueman
   jq
   killall
+  gvfs
+  pavucontrol
+  nautilus
+  xdg-desktop-portal
+  xdg-desktop-portal-gtk
+  xdg-desktop-portal-gnome
   ];
-
-  #IME workaround for electron app
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  
-  #Pragrams and services enable
+    
+  #Programs and services enable
   programs.niri.enable = true;
   programs.git.enable = true;
   services.displayManager.ly.enable = true;
@@ -93,6 +95,7 @@
   programs.xwayland.enable = true;
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
+  services.gvfs.enable = true;
     
   stylix = {
     enable = true;
@@ -101,6 +104,22 @@
     override = {base00 = "000000";};
    };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+    ];
+    config = {
+      common = {
+        default = [ "gtk" ];
+      };
+      niri = {
+        default = [ "gtk" "gnome"];
+      };
+    };
+  };
+  
   # Audio configuration with pipewire
   security.rtkit.enable = true;
   services.pipewire = {
@@ -130,6 +149,20 @@
   };
 
   nix.settings.auto-optimise-store = true;
+
+  # Environment variables
+  environment.variables = {
+    GSK_RENDERER = "Vulkan";
+  };
+
+  # Environment sessionVariables
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1"; #IME workaround for electron app
+    XDG_CURRENT_DESKTOP = "niri";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "niri";
+    GDK_BACKEND = "wayland";
+  };
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
