@@ -173,6 +173,21 @@
       .widget-title>label {
         font-size: 18px;
       }
+
+      .widget-mpris .widget-mpris-player {
+        background: @base00;
+        border: 1px solid @base01;
+      }
+
+      .widget-mpris .widget-mpris-player>box>button {
+        background: @base00;
+        border: 1px solid transparent;
+      }      
+
+      .widget-mpris .widget-mpris-player>box>button:hover {
+        background: @base01;
+      }
+      
     '';
   };
 }
