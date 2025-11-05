@@ -12,5 +12,7 @@
     ./stylix.nix
     ./fuzzel.nix
     ./swaync.nix
+    ./hypridle.nix
+    ./hyprlock.nix
   ];
 }

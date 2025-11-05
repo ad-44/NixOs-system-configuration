@@ -3,6 +3,7 @@
 {
   programs.waybar = {
     enable = true;
+    systemd.enable = false;
     settings = {
       mainbar = {
         layer = "top";
@@ -22,12 +23,18 @@
 
         "clock"= {
           format = " {:%H:%M}";
-          tooltip = false;
+          tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+          format-alt = "{:%Y-%m-%d}";
         };
 
         "battery"= {
+          states = {
+            warning = 30;
+            critical = 15;
+          };
           format = "{icon} {capacity}%";
           format-charging = " {capacity}%";
+          format-alt = "{time} {icon}";
           tooltip = false;
           format-icons = [
             ""
@@ -70,6 +77,23 @@
       .modules-center {
         background: alpha(@base00,0.6);
         border-radius: 5px;
+      }
+
+      @Keyframes blink {
+        to {
+          background-color: #ffffff;
+          color: #000000;
+        }
+      }
+      
+      #battery.critical:not(.charging) {
+        background-color: #f53c3c;
+        color: @base05;
+        animation: blink;
+        animation-duration: 0.5s;
+        animation-timing-function: steps(12);
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
       }
     '';
   };

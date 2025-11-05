@@ -87,7 +87,7 @@
   xdg-desktop-portal-gnome
   ];
     
-  #Programs and services enable
+  # Programs and services enable
   programs.niri.enable = true;
   programs.git.enable = true;
   services.displayManager.ly.enable = true;
@@ -119,6 +119,8 @@
       };
     };
   };
+  # Enable login password to decrypt wallet/keyring
+  security.pam.services.login.enableGnomeKeyring = true;
   
   # Audio configuration with pipewire
   security.rtkit.enable = true;

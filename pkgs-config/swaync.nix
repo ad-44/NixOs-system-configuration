@@ -103,7 +103,7 @@
              }
              {
               label = "  Lock";
-              command = "systemctl suspend";
+              command = "hyprlock";
              } 
             ];
           };
