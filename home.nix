@@ -14,6 +14,7 @@
     btop
     yazi
     wev
+    glow
 
   # System
     gnome-keyring
@@ -33,6 +34,7 @@
     waybar
     mpv
     zed-editor
+    qimgv
   ];
 
   # Import pkgs configurations
