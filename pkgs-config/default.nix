@@ -8,11 +8,12 @@
     ./git.nix
     ./starship.nix
     ./helix.nix
-   # ./firefox.nix
+    # ./zen-browser.nix
     ./stylix.nix
     ./fuzzel.nix
     ./swaync.nix
     ./hypridle.nix
     ./hyprlock.nix
+    ./thunderbird.nix
   ];
 }

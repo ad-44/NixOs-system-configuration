@@ -119,6 +119,7 @@
       };
     };
   };
+
   # Enable login password to decrypt wallet/keyring
   security.pam.services.login.enableGnomeKeyring = true;
   
@@ -141,6 +142,7 @@
     fira-code
     nerd-fonts.jetbrains-mono
   ];
+  
   # Reducing disk usage
   boot.loader.systemd-boot.configurationLimit = 10;
 

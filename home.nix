@@ -15,6 +15,7 @@
     yazi
     wev
     glow
+    libsecret
 
   # System
     gnome-keyring
@@ -35,6 +36,7 @@
     mpv
     zed-editor
     qimgv
+    thunderbird
   ];
 
   # Import pkgs configurations
@@ -49,6 +51,7 @@
   programs.yazi.enable = true;
   programs.mpv.enable = true;
   programs.zed-editor.enable = true;
+  services.gnome-keyring.enable = true;
 
   # Niri config vi symlink
   home.file = {
