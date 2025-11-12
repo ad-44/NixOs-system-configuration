@@ -13,9 +13,13 @@
     helix
     btop
     yazi
+    spotify-player
     wev
     glow
     libsecret
+    aerc
+    w3m
+    dante
 
   # System
     gnome-keyring
@@ -30,13 +34,13 @@
     fuzzel
     inputs.zen-browser.packages."${system}".twilight-official
     swaynotificationcenter
-    spotify-player
     spotify
     waybar
     mpv
     zed-editor
     qimgv
     thunderbird
+    onlyoffice-desktopeditors
   ];
 
   # Import pkgs configurations
@@ -52,10 +56,17 @@
   programs.mpv.enable = true;
   programs.zed-editor.enable = true;
   services.gnome-keyring.enable = true;
+  programs.onlyoffice.enable = true;
 
   # Niri config vi symlink
   home.file = {
     ".config/niri/config.kdl".source = ./pkgs-config/niri/config.kdl;  
+  };
+
+  # Define session variables
+  home.sessionVariables = {
+    EDITOR = "hx";
+    TERMINAL = "foot";
   };
   
   home.stateVersion = "25.05";

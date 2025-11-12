@@ -14,6 +14,6 @@
     ./swaync.nix
     ./hypridle.nix
     ./hyprlock.nix
-    ./thunderbird.nix
+    ./mail.nix
   ];
 }
