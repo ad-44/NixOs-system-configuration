@@ -42,7 +42,7 @@
         useStartTls = true;
       };
     };
-    passwordCommand = "pass mail/gmail";
+    passwordCommand = "pass show mail/gmail | head -n 1";
     
   };
 
@@ -69,6 +69,6 @@
         useStartTls = true;
       };
     };
-    passwordCommand = "pass mail/university";
+    passwordCommand = "pass show mail/university | head -n 1";
   };
 }
