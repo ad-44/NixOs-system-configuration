@@ -15,5 +15,6 @@
     ./hypridle.nix
     ./hyprlock.nix
     ./mail.nix
+    ./gpg-config.nix
   ];
 }

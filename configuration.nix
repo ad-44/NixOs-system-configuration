@@ -121,7 +121,7 @@
   };
 
   # Enable login password to decrypt wallet/keyring
-  security.pam.services.login.enableGnomeKeyring = true;
+  # security.pam.services.login.enableGnomeKeyring = false;
   
   # Audio configuration with pipewire
   security.rtkit.enable = true;

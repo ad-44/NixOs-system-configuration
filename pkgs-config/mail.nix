@@ -42,7 +42,7 @@
         useStartTls = true;
       };
     };
-    passwordCommand = "secret-tool lookup key gmail";
+    passwordCommand = "pass mail/gmail";
     
   };
 
@@ -69,6 +69,6 @@
         useStartTls = true;
       };
     };
-    passwordCommand = "secret-tool lookup key university";
+    passwordCommand = "pass mail/university";
   };
 }

@@ -22,7 +22,6 @@
     dante
 
   # System
-    gnome-keyring
     gcr
     vala
     seahorse
@@ -41,6 +40,10 @@
     qimgv
     thunderbird
     onlyoffice-desktopeditors
+    gnupg
+    passff-host
+    pinentry-gnome3
+    browserpass
   ];
 
   # Import pkgs configurations
@@ -55,9 +58,9 @@
   programs.yazi.enable = true;
   programs.mpv.enable = true;
   programs.zed-editor.enable = true;
-  services.gnome-keyring.enable = true;
+  services.gnome-keyring.enable = false;
   programs.onlyoffice.enable = true;
-
+ 
   # Niri config vi symlink
   home.file = {
     ".config/niri/config.kdl".source = ./pkgs-config/niri/config.kdl;  
