@@ -34,7 +34,7 @@
           };
           format = "{icon} {capacity}%";
           format-charging = " {capacity}%";
-          format-alt = "{time} {icon}";
+          format-alt = "{time}";
           tooltip = false;
           format-icons = [
             ""

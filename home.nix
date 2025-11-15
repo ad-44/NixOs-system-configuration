@@ -44,6 +44,7 @@
     passff-host
     pinentry-gnome3
     browserpass
+    musicpod
   ];
 
   # Import pkgs configurations
@@ -60,7 +61,7 @@
   programs.zed-editor.enable = true;
   services.gnome-keyring.enable = false;
   programs.onlyoffice.enable = true;
- 
+  
   # Niri config vi symlink
   home.file = {
     ".config/niri/config.kdl".source = ./pkgs-config/niri/config.kdl;  
