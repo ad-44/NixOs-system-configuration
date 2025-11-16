@@ -138,6 +138,7 @@ spawn-at-startup "swaync"
 spawn-sh-at-startup "swww img ~/system-flake/Wallpapers/wallpaper.jpg"
 spawn-at-startup "waybar"
 spawn-sh-at-startup "systemctl --user start overview-waybar.service"
+spawn-sh-at-startup "clipse -listen"
 
 // Miscellanious
 prefer-no-csd
@@ -180,6 +181,12 @@ window-rule {
     default-column-width { fixed 640; }
 }
 
+    // Open zen-browser as a maximized window
+window-rule {
+    match app-id="zen-twilight"
+    open-maximized true
+}
+
     // Example: block out two password managers from screen capture.
 /-window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
@@ -197,6 +204,26 @@ window-rule {
     clip-to-geometry true
 }
 
+    // Clipboard manager pop-up as a floating window
+window-rule {
+    match app-id="clipse"
+    open-floating true
+    open-focused true
+    default-floating-position x=0 y=0 relative-to="top"
+    default-window-height { proportion 0.5; }
+    default-column-width { proportion 0.8; }
+}
+
+    // Dropdown terminal
+window-rule {
+    match app-id="dropdown"
+    open-floating true
+    open-focused true
+    default-floating-position x=0 y=0 relative-to="top"
+    default-window-height { proportion 0.5; }
+    default-column-width { proportion 0.8; }
+}
+
 // Keybinds configuration
 
 binds {
@@ -204,12 +231,14 @@ binds {
     Mod+Shift+twosuperior { show-hotkey-overlay; }
 
     // Programs
-    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "foot"; }
+    Mod+T hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
+    Mod+D hotkey-overlay-title="Open a dropdown Terminal" { spawn "foot" "-a" "dropdown"; }
     Mod+A hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "hyprlock"; }
     Super+Space hotkey-overlay-title="Open sway notification center" { spawn-sh "swaync-client -t -sw";}
     Super+E hotkey-overlay-title="Open tui file manager" { spawn-sh "foot yazi"; }
     Super+Shift+E hotkey-overlay-title="Open gui file manager" { spawn "nautilus"; }
+    Super+X hotkey-overlay-title="Open clipboard manager" { spawn "foot" "-a" "clipse" "clipse"; }
 
     // Volume
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }

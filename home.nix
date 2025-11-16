@@ -20,6 +20,7 @@
     aerc
     w3m
     dante
+    wl-clipboard
 
   # System
     gcr
@@ -45,6 +46,7 @@
     pinentry-gnome3
     browserpass
     musicpod
+    clipse
   ];
 
   # Import pkgs configurations
@@ -61,6 +63,16 @@
   programs.zed-editor.enable = true;
   services.gnome-keyring.enable = false;
   programs.onlyoffice.enable = true;
+
+  # Clipboard manager options
+  services.clipse = {
+    enable = true;
+    imageDisplay = {
+      type = "sixel";
+      scaleX = 14;
+      scaleY = 16;  
+    };
+  };
   
   # Niri config vi symlink
   home.file = {
