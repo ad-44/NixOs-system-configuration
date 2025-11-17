@@ -21,6 +21,7 @@
     w3m
     dante
     wl-clipboard
+    uv
 
   # System
     gcr
@@ -63,6 +64,7 @@
   programs.zed-editor.enable = true;
   services.gnome-keyring.enable = false;
   programs.onlyoffice.enable = true;
+  programs.uv.enable = true;
 
   # Clipboard manager options
   services.clipse = {

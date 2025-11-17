@@ -85,6 +85,7 @@
   xdg-desktop-portal
   xdg-desktop-portal-gtk
   xdg-desktop-portal-gnome
+  nix-ld
   ];
     
   # Programs and services enable
@@ -96,6 +97,7 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
   services.gvfs.enable = true;
+  programs.nix-ld.enable = true;
     
   stylix = {
     enable = true;
