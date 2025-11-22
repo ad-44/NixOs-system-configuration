@@ -22,6 +22,7 @@
     dante
     wl-clipboard
     uv
+    didyoumean
 
   # System
     gcr
@@ -48,6 +49,7 @@
     browserpass
     musicpod
     clipse
+    sioyek
   ];
 
   # Import pkgs configurations
@@ -65,6 +67,7 @@
   services.gnome-keyring.enable = false;
   programs.onlyoffice.enable = true;
   programs.uv.enable = true;
+  programs.sioyek.enable = true;
 
   # Clipboard manager options
   services.clipse = {
