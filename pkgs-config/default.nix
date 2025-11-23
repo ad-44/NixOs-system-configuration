@@ -16,5 +16,7 @@
     ./hyprlock.nix
     ./mail.nix
     ./gpg-config.nix
+    ./portals.nix
+    ./mimeapps.nix
   ];
 }

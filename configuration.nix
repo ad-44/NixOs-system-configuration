@@ -92,12 +92,13 @@
   programs.niri.enable = true;
   programs.git.enable = true;
   services.displayManager.ly.enable = true;
-  programs.ssh.startAgent = true;
+  programs.ssh.startAgent = false;
   programs.xwayland.enable = true;
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
   services.gvfs.enable = true;
   programs.nix-ld.enable = true;
+  services.udisks2.enable = true;
     
   stylix = {
     enable = true;
@@ -108,9 +109,9 @@
 
   xdg.portal = {
     enable = true;
+    xdgOpenUsePortal = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-gnome
     ];
     config = {
       common = {
@@ -124,7 +125,8 @@
 
   # Enable login password to decrypt wallet/keyring
   # security.pam.services.login.enableGnomeKeyring = false;
-  
+  # security.pam.services.antoine.gnupg.enable = true;
+    
   # Audio configuration with pipewire
   security.rtkit.enable = true;
   services.pipewire = {

@@ -50,6 +50,11 @@
     musicpod
     clipse
     sioyek
+
+  # Retroarch & cores
+    (retroarch.withCores (cores: with cores; [
+      dolphin
+    ]))  
   ];
 
   # Import pkgs configurations
@@ -68,7 +73,11 @@
   programs.onlyoffice.enable = true;
   programs.uv.enable = true;
   programs.sioyek.enable = true;
+  xdg.mime.enable = true;
 
+  # USB mount
+  services.udiskie.enable = true;
+  
   # Clipboard manager options
   services.clipse = {
     enable = true;
