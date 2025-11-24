@@ -30,6 +30,7 @@
     seahorse
     hypridle
     hyprlock
+    poweralertd
     
   # GUI
     swww
@@ -74,6 +75,7 @@
   programs.uv.enable = true;
   programs.sioyek.enable = true;
   xdg.mime.enable = true;
+  services.poweralertd.enable = true;
 
   # USB mount
   services.udiskie.enable = true;

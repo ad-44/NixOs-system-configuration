@@ -224,6 +224,26 @@ window-rule {
     default-column-width { proportion 0.8; }
 }
 
+    // Floating virtual keyboard
+/-window-rule {
+    match app-id="onboard" title="Onboard"
+    open-floating true
+    open-focused false
+    default-floating-position x=0 y=0 relative-to="bottom"
+    default-window-height { proportion 0.3; }
+    default-column-width { proportion 0.7; }
+}
+
+    // Floating virtual keyboard on hide mode
+/-window-rule {
+    match app-id="onboard" title="onboard"
+    open-floating true
+    open-focused false
+    default-floating-position x=0 y=0 relative-to="bottom"
+    default-window-height { fixed 30; }
+    default-column-width { fixed 30; }
+}
+
 // Keybinds configuration
 
 binds {

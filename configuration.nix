@@ -86,6 +86,7 @@
   xdg-desktop-portal-gtk
   xdg-desktop-portal-gnome
   nix-ld
+  upower
   ];
     
   # Programs and services enable
@@ -99,6 +100,10 @@
   services.gvfs.enable = true;
   programs.nix-ld.enable = true;
   services.udisks2.enable = true;
+
+  services.upower = {
+    enable = true;
+  };
     
   stylix = {
     enable = true;
