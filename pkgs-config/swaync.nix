@@ -75,6 +75,7 @@
 
         backlight = {
           label = "󰃟";
+          device = "amdgpu_bl1";
         };
 
         mpris = {

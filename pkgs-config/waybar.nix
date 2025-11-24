@@ -10,7 +10,7 @@
         exclusive = false;
         start_hidden = true;
         reload_style_on_change = true;
-        margin-top = 233;
+        margin-top = 215;
         modules-center = [
           "custom/applauncher"
           "custom/separator"

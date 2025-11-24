@@ -31,6 +31,7 @@
     hypridle
     hyprlock
     poweralertd
+    brightnessctl
     
   # GUI
     swww
