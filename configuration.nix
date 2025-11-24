@@ -102,7 +102,7 @@
   services.gvfs.enable = true;
   programs.nix-ld.enable = true;
   services.udisks2.enable = true;
-
+  
   services.upower = {
     enable = true;
   };

@@ -16,7 +16,17 @@
   programs.aerc = {
     enable = true;
     extraConfig = {
-      general.unsafe-accounts-conf = true;
+      general = {
+        unsafe-accounts-conf = true;
+        term = "foot";
+      };
+      viewer = {
+        pager = "glow -p";
+      };
+      filters = {
+        "text/plain" = "glow -p";
+        "text/html" = "glow -p";
+      };
     };
   };
   
@@ -69,6 +79,6 @@
         useStartTls = true;
       };
     };
-    passwordCommand = "pass show mail/university | head -n 1";
+    passwordCommand = "pass show mail/université | head -n 1";
   };
 }

@@ -23,6 +23,8 @@
     wl-clipboard
     uv
     didyoumean
+    yt-dlp
+    less
 
   # System
     gcr
@@ -77,6 +79,8 @@
   programs.sioyek.enable = true;
   xdg.mime.enable = true;
   services.poweralertd.enable = true;
+  programs.less.enable = true;
+  programs.yt-dlp.enable = true;
 
   # USB mount
   services.udiskie.enable = true;
