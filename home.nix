@@ -34,6 +34,10 @@
     hyprlock
     poweralertd
     brightnessctl
+    texliveFull
+    texlab
+    tectonic
+    bc
     
   # GUI
     swww
@@ -54,6 +58,7 @@
     musicpod
     clipse
     sioyek
+    komikku
 
   # Retroarch & cores
     (retroarch.withCores (cores: with cores; [
