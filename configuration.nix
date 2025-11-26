@@ -94,6 +94,7 @@
   upower
   powertop
   tlp
+  ffmpeg
   ];
     
   # Programs and services enable
