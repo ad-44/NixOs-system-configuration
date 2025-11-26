@@ -36,9 +36,11 @@
     brightnessctl
     texliveFull
     texlab
+    ltex-ls-plus
     tectonic
     bc
     libva-utils
+    markdown-oxide
     
     # GUI
     swww
