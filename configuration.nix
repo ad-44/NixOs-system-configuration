@@ -16,6 +16,9 @@
   #boot.loader.grub.useOSProber = true;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Configure hardware graphics
+  hardware.graphics.enable = true;
   
   networking.hostName = "laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -89,6 +92,8 @@
   xdg-desktop-portal-gnome
   nix-ld
   upower
+  powertop
+  tlp
   ];
     
   # Programs and services enable
@@ -164,6 +169,28 @@
   };
 
   nix.settings.auto-optimise-store = true;
+
+  # Fix uv python ssl.SSLCertVerificationError
+  environment.etc.certfile = {
+    source = "/etc/ssl/certs/ca-bundle.crt";
+    target = "ssl/cert.pem";
+  };
+  
+  # Laptop battery management
+  powerManagement.powertop.enable = true;
+  services = {
+    power-profiles-daemon.enable = false;
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_BOOST_ON_AC = 1;
+        CPU_BOOST_ON_BAT = 0;
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+        STOP_CHARGE_THRESH_BAT0 = 95;
+      };
+    };
+  };
 
   # Environment variables
   environment.variables = {

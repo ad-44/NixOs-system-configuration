@@ -38,8 +38,9 @@
     texlab
     tectonic
     bc
+    libva-utils
     
-  # GUI
+    # GUI
     swww
     fuzzel
     inputs.zen-browser.packages."${system}".twilight-official
@@ -76,7 +77,6 @@
   programs.spotify-player.enable = true;
   services.network-manager-applet.enable = true;
   programs.yazi.enable = true;
-  programs.mpv.enable = true;
   programs.zed-editor.enable = true;
   services.gnome-keyring.enable = false;
   programs.onlyoffice.enable = true;
@@ -89,6 +89,14 @@
 
   # USB mount
   services.udiskie.enable = true;
+
+  # mpv enable hardware decoding
+  programs.mpv = {
+    enable = true;
+    config = {
+      hwdec = "auto";
+    };  
+  };
   
   # Clipboard manager options
   services.clipse = {
