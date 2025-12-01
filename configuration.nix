@@ -95,6 +95,7 @@
   powertop
   tlp
   ffmpeg
+  usbutils
   ];
     
   # Programs and services enable
@@ -108,6 +109,17 @@
   services.gvfs.enable = true;
   programs.nix-ld.enable = true;
   services.udisks2.enable = true;
+
+    #finger print scanner
+  services.fprintd = {
+    enable = true;
+    package = pkgs.fprintd-tod;
+    tod = {
+      enable = true;
+      driver = pkgs.libfprint-2-tod1-goodix;
+    };
+  };
+  
   
   services.upower = {
     enable = true;
@@ -158,6 +170,7 @@
   fonts.packages = with pkgs; [
     fira-code
     nerd-fonts.jetbrains-mono
+    nerd-fonts.roboto-mono
   ];
   
   # Reducing disk usage
@@ -166,7 +179,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 1w";
+    options = "--delete-older-than 7d";
   };
 
   nix.settings.auto-optimise-store = true;
