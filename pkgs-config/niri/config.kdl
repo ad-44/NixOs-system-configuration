@@ -187,6 +187,12 @@ window-rule {
     open-maximized true
 }
 
+    // Tryong fixing the problem with musicpod
+window-rule {
+    match app-id="musicpod"
+    open-maximized false
+}
+
     // Example: block out two password managers from screen capture.
 /-window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#

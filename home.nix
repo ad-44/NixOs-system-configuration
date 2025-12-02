@@ -88,6 +88,8 @@
   services.poweralertd.enable = true;
   programs.less.enable = true;
   programs.yt-dlp.enable = true;
+  services.kdeconnect.enable = true;
+  programs.freetube.enable = true;
 
   # USB mount
   services.udiskie.enable = true;
