@@ -41,11 +41,12 @@
     bc
     libva-utils
     markdown-oxide
+    xdg-utils
     
     # GUI
     swww
     fuzzel
-    inputs.zen-browser.packages."${system}".twilight-official
+    inputs.zen-browser.packages."${stdenv.hostPlatform.system}".twilight-official
     swaynotificationcenter
     spotify
     waybar
@@ -58,10 +59,10 @@
     passff-host
     pinentry-gnome3
     browserpass
-    musicpod
     clipse
     sioyek
     komikku
+    gtk4
 
   # Retroarch & cores
     (retroarch.withCores (cores: with cores; [
@@ -88,7 +89,6 @@
   services.poweralertd.enable = true;
   programs.less.enable = true;
   programs.yt-dlp.enable = true;
-  services.kdeconnect.enable = true;
   programs.freetube.enable = true;
 
   # USB mount

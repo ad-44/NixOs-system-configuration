@@ -24,4 +24,16 @@
 
   };
 
+  stylix.icons = {
+    enable = true;
+    package = pkgs.papirus-icon-theme;
+    dark = "Papirus-Dark";
+    light = "Papirus";
+  };
+
+  stylix.cursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Original-Classic";
+    size = 16;
+  };
 }  

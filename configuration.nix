@@ -87,9 +87,8 @@
   gvfs
   pavucontrol
   nautilus
+  xdg-desktop-portal-wlr
   xdg-desktop-portal
-  xdg-desktop-portal-gtk
-  xdg-desktop-portal-gnome
   nix-ld
   upower
   powertop
@@ -112,7 +111,7 @@
 
     #finger print scanner
   services.fprintd = {
-    enable = true;
+    enable = false;
     package = pkgs.fprintd-tod;
     tod = {
       enable = true;
@@ -136,14 +135,14 @@
     enable = true;
     xdgOpenUsePortal = true;
     extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
     ];
     config = {
       common = {
-        default = [ "gtk" ];
+        default = [ "wlr" ];
       };
       niri = {
-        default = [ "gtk" "gnome"];
+        default = [ "wlr"];
       };
     };
   };
@@ -218,6 +217,7 @@
     XDG_SESSION_TYPE = "wayland";
     XDG_SESSION_DESKTOP = "niri";
     GDK_BACKEND = "wayland";
+    WAYLAND_DISPLAY = "wayland-1";
   };
   # List services that you want to enable:
 

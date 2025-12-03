@@ -8,7 +8,6 @@
     ./git.nix
     ./starship.nix
     ./helix.nix
-    # ./zen-browser.nix
     ./stylix.nix
     ./fuzzel.nix
     ./swaync.nix
@@ -16,7 +15,6 @@
     ./hyprlock.nix
     ./mail.nix
     ./gpg-config.nix
-    ./portals.nix
     ./mimeapps.nix
   ];
 }

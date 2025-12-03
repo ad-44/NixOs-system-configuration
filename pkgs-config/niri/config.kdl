@@ -133,10 +133,10 @@ layout {
 }
 
 // Spawn at startup configuration
-spawn-at-startup "swww-daemon"
-spawn-at-startup "swaync"
+//rootspawn-at-startup "swww-daemon"
+//spawn-sh-at-startup "swaync"
 spawn-sh-at-startup "swww img ~/system-flake/Wallpapers/wallpaper.jpg"
-spawn-at-startup "waybar"
+//spawn-sh-at-startup "waybar"
 spawn-sh-at-startup "systemctl --user start overview-waybar.service"
 spawn-sh-at-startup "clipse -listen"
 
@@ -185,12 +185,6 @@ window-rule {
 window-rule {
     match app-id="zen-twilight"
     open-maximized true
-}
-
-    // Tryong fixing the problem with musicpod
-window-rule {
-    match app-id="musicpod"
-    open-maximized false
 }
 
     // Example: block out two password managers from screen capture.
@@ -259,11 +253,13 @@ binds {
     // Programs
     Mod+T hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Open a dropdown Terminal" { spawn "foot" "-a" "dropdown"; }
+    Mod+S hotkey-overlay-title="Open Spotify TUI" { spawn-sh "foot spotify_player"; }
+    Mod+Shift+S hotkey-overlay-title="Open Spotify GUI" { spawn "spotify"; }
     Mod+A hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "hyprlock"; }
+    Super+L hotkey-overlay-title="Lock the Screen" { spawn "hyprlock"; }
     Super+Space hotkey-overlay-title="Open sway notification center" { spawn-sh "swaync-client -t -sw";}
-    Super+E hotkey-overlay-title="Open tui file manager" { spawn-sh "foot yazi"; }
-    Super+Shift+E hotkey-overlay-title="Open gui file manager" { spawn "nautilus"; }
+    Super+E hotkey-overlay-title="Open file manager TUI" { spawn-sh "foot yazi"; }
+    Super+Shift+E hotkey-overlay-title="Open gui file manager GUI" { spawn "nautilus"; }
     Super+X hotkey-overlay-title="Open clipboard manager" { spawn "foot" "-a" "clipse" "clipse"; }
 
     // Volume

@@ -10,7 +10,7 @@
         anchor = "top-left";
         x-margin = 10;
         y-margin = 10;
-        width = 15;
+        width = 30;
         lines = 39;
       };     
     };
