@@ -31,8 +31,24 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Enable networking
-  networking.networkmanager.enable = true;
-
+  networking = {
+    networkmanager = {
+      enable = true;
+      wifi.backend = "iwd";
+    };
+    wireless.iwd = {
+      enable = true;
+      settings = {
+        Network = {
+          EnableIPv6 = true;
+        };
+        Settings = {
+          AutoConnect = true;
+        };
+      };
+    };
+  };
+  
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
@@ -80,7 +96,6 @@
   libnotify
   xwayland-satellite
   networkmanager
-  networkmanagerapplet
   blueman
   jq
   killall

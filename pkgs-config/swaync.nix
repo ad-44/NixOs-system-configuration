@@ -85,7 +85,7 @@
         };
         
         "menubar#label" = {
-          "menu#power-buttons" ={
+          "menu#power-buttons" = {
             label = "⏻";
             position = "right";
             animation-type = "slide_up";
@@ -113,7 +113,7 @@
             actions = [
              {
               label = " ";
-              command = "swaync-client -t -sw;nm-connection-editor";
+              command = "swaync-client -t -sw;iwgtk";
              }
             ];              
           };
@@ -137,18 +137,19 @@
       }
 
       .widget-menubar>box>.menu-button-bar>button {
-        margin: 5px;
+        margin: 2px;
         background: transparent;
       }
 
       .widget-menubar>box>.menu-button-bar>button>label {
         font-size: 16px;
+        background: transparent;
       }
 
       .widget-menubar>box>.menu-button-bar>button:hover {
         background-color: @base01;
       }
-
+      
       .network-button>button,
       .bluetooth-button>button {
         margin: 5px;

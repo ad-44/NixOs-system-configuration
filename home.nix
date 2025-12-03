@@ -63,6 +63,7 @@
     sioyek
     komikku
     gtk4
+    iwgtk
 
   # Retroarch & cores
     (retroarch.withCores (cores: with cores; [
