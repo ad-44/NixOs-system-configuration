@@ -131,6 +131,122 @@
       };      
     };
     style = ''
+
+      trough {
+        border: none;
+        background: none;
+      }
+
+      
+      /* -----------------------------------
+         🔔 Notifications
+      -------------------------------------- */
+      .notification {
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        padding: 6px 10px;
+        margin-bottom: 6px;
+        min-height: 50px;
+        box-shadow: none;
+      }
+
+      .notification-content {
+        background: transparent;
+        border: none;
+      }
+
+      .notification .summary {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 2px;
+      }
+
+      .notification .time {
+        font-size: 0.75rem;
+        color: alpha(@base0D, 0.6);
+      }
+
+      .notification .body {
+        font-size: 0.95rem;
+        color: @base0D;
+      }
+
+      .notification-action>button {
+        padding: 5px 10px;
+        font-size: 0.9rem;
+        background-color: @base01;
+        color: @base0D;
+        border-radius: 2px;
+        border: none;
+        margin: 6px 6px 0 0;
+      }
+
+      .notification-action>button:hover {
+        background-color: @base01;
+      }
+
+      .notification-action>button:hover label {
+        background-color: @base01;
+        color: @base05;
+      }
+
+      /* Urgency */
+      .notification.critical {
+        background: alpha(@base01, 0.95);
+        border-left: 9px solid @base0D;
+        border-right: 1px solid alpha(@base01, 0.95);
+        border-bottom: 1px solid alpha(@base01, 0.95);   
+        border-top: 1px solid alpha(@base01, 0.95);
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        }
+        
+      .notification.critical .title,
+      .notification.critical .body,
+      .notification.critical .summary {
+        color: alpha(@base05, 0.9);
+        font-weight: bold;
+      }
+
+      .notification.low,
+      .notification.normal {
+        background-color: alpha(@base00, 0.95);
+        border-left: 9px solid @base0D;
+        border-right: 1px solid alpha(@base00, 0.95);
+        border-bottom: 1px solid alpha(@base00, 0.95);   
+        border-top: 1px solid alpha(@base00, 0.95);
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+
+      /* -----------------------------------
+         🖼️ Image/Icon
+      -------------------------------------- */
+      .image {
+        margin-right: 10px;
+        min-width: 36px;
+        min-height: 36px;
+        border: none;
+      }
+
+      /* -----------------------------------
+         ❌ Close Buttons
+      -------------------------------------- */
+      .close-button {
+        background-color: alpha(@base05, 0.8);
+        border-radius: 8px;
+      }
+
+      .close-button label {
+        color: @base01;
+      }
+
+      .close-button:hover {
+        background-color: alpha(@base01, 0.8);
+      }
+            
+      
       .widget-volume,
       .widget-backlight {
         background: transparent;

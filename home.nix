@@ -77,7 +77,7 @@
   ];
 
   # Enable application that does not need further settings
-  services.swww.enable = true;
+  services.swww.enable = false;
   programs.spotify-player.enable = true;
   services.network-manager-applet.enable = true;
   programs.yazi.enable = true;
