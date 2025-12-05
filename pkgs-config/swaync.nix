@@ -85,7 +85,7 @@
         };
         
         "menubar#label" = {
-          "menu#power-buttons" = {
+          "menu#power-button" = {
             label = "⏻";
             position = "right";
             animation-type = "slide_up";
@@ -137,6 +137,10 @@
         background: none;
       }
 
+      .control-center:active {
+        background: @base00;
+      }
+
       
       /* -----------------------------------
          🔔 Notifications
@@ -154,6 +158,21 @@
       .notification-content {
         background: transparent;
         border: none;
+      }
+
+      .notification-action:active {
+        background: @base01;
+        color: @base05;
+      }
+      
+      .notification-default-action:hover {
+        background: transparent;
+        color: @base05;
+      }
+
+      .notification:hover {
+        background-color: @base05;
+        color: @base05;
       }
 
       .notification .summary {
@@ -175,7 +194,7 @@
       .notification-action>button {
         padding: 5px 10px;
         font-size: 0.9rem;
-        background-color: @base01;
+        background-color: alpha(@base01, 0.5);
         color: @base0D;
         border-radius: 2px;
         border: none;
@@ -183,11 +202,11 @@
       }
 
       .notification-action>button:hover {
-        background-color: @base01;
+        background-color: alpha(@base01, 0.5);
       }
 
       .notification-action>button:hover label {
-        background-color: @base01;
+        background-color: transparent;
         color: @base05;
       }
 
@@ -220,6 +239,16 @@
         border-bottom-left-radius: 0px;
       }
 
+      /* Grouped notifications in control center */
+      .notification-group,
+      .notification-group.collapsed {
+        background: alpha(@base0D, 0.95);
+      }
+
+      .notification-group.collapsed .notification-row .notification {
+        background: transparent;
+      }
+   
       /* -----------------------------------
          🖼️ Image/Icon
       -------------------------------------- */
@@ -233,54 +262,98 @@
       /* -----------------------------------
          ❌ Close Buttons
       -------------------------------------- */
+      .notification.normal .close-button,
+      .notification.low .close-button {
+        background-color: alpha(@base00, 0.95);
+        border-radius: 8px;
+      }
+
+      .notification.normal .close-button,
+      .notification.low .close-button label {
+        color: @base0D;
+      }
+
+      .notification.normal .close-button,
+      .notification.low .close-button:hover {
+        background-color: alpha(@base01, 0.95);
+      }
+            
+      .notification.critical .close-button {
+        background-color: alpha(@base01, 0.95) !important;
+        border-radius: 8px;
+      }
+
+      .notification.critical .close-button:hover {
+        background-color: alpha(@base00, 0.95) !important;
+      }
+            
       .close-button {
-        background-color: alpha(@base05, 0.8);
+        background-color: alpha(@base00, 0.95);
         border-radius: 8px;
       }
 
       .close-button label {
-        color: @base01;
+        color: @base0D;
       }
 
       .close-button:hover {
-        background-color: alpha(@base01, 0.8);
+        background-color: alpha(@base01, 0.95);
       }
-            
-      
+
+      /*-------------------------------------
+        Sliders widget (volume/brightness)
+      -------------------------------------*/
+
       .widget-volume,
       .widget-backlight {
         background: transparent;
       }
 
-      .widget-menubar>box>.menu-button-bar>button {
-        margin: 2px;
-        background: transparent;
+      .widget-volume>box>button {
+        background: @base00;
       }
 
-      .widget-menubar>box>.menu-button-bar>button>label {
-        font-size: 16px;
-        background: transparent;
-      }
-
-      .widget-menubar>box>.menu-button-bar>button:hover {
-        background-color: @base01;
+      .widget-volume>box>button:hover {
+        background: @base01;
       }
       
+      scale trough {
+        background-color: alpha(@base01, 0.5);
+      }
+
+      /*--------------------------
+        Menu bar widget & buttons
+      --------------------------*/      
+      .power-button>button,    
       .network-button>button,
       .bluetooth-button>button {
         margin: 5px;
-        background: transparent;
+        background: @base00;
       }
 
+      .power-button>button {
+        padding: 0 0 10px 0;
+      }
+
+      .widget-menubar>box>.menu-button-bar>.end>button label {
+        background-color: @base00;
+      }
+      
       .network-button>button>label,
       .bluetooth-button>button>label {
         font-size: 16px;
       }
 
+      .power-button>button:hover,
       .network-button>button:hover,
       .bluetooth-button>button:hover {
         background-color: @base01;
       }
+
+
+      /*----------------------------
+        Widget titles
+      ----------------------------*/
 
       .widget-title>button {
         background: transparent;
@@ -291,6 +364,10 @@
       .widget-title>label {
         font-size: 18px;
       }
+
+      /*-----------------------------
+        MPRIS widget
+      -----------------------------*/
 
       .widget-mpris .widget-mpris-player {
         background: @base00;
