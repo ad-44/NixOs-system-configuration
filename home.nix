@@ -64,6 +64,7 @@
     komikku
     gtk4
     iwgtk
+    goodvibes
 
   # Retroarch & cores
     (retroarch.withCores (cores: with cores; [
