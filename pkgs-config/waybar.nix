@@ -16,6 +16,8 @@
           "custom/separator"
           "clock"
           "custom/separator"
+          "idle_inhibitor"
+          "custom/separator"
           "battery"
           "custom/separator"
           "custom/parameters"
@@ -59,7 +61,15 @@
         "custom/parameters" = {
           format = "  ";
           on-click = "swaync-client -t";
-          tooltip = false;  
+          tooltip = false;
+        };
+
+        "idle_inhibitor" = {
+          format = "{icon}";
+          format-icons = {
+            activated = " ";
+            deactivated = " ";
+          };
         };
                 
       };

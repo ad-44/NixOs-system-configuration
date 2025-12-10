@@ -163,6 +163,15 @@ window-rule {
     default-column-width { fixed 640; }
 }
 
+window-rule {
+    match app-id="goodvibes"
+    open-floating true
+    open-focused true
+    default-floating-position x=5 y=5 relative-to="top"
+    default-window-height { fixed 360; }
+    default-column-width { fixed 640; }
+}
+
     // Remove background of border and focus ring
 window-rule {
     draw-border-with-background false
