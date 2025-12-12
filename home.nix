@@ -25,6 +25,7 @@
     didyoumean
     yt-dlp
     less
+    pandoc
 
   # System
     gcr
