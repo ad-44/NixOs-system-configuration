@@ -3,6 +3,6 @@
 {
   programs.qt = {
     enable = true;
-    plateformTheme.name = "gtk3";
+    plateformTheme.name = "gtk4";
   };
 }

@@ -110,6 +110,7 @@
   tlp
   ffmpeg
   usbutils
+  mesa
   ];
     
   # Programs and services enable
@@ -133,7 +134,6 @@
       driver = pkgs.libfprint-2-tod1-goodix;
     };
   };
-  
   
   services.upower = {
     enable = true;

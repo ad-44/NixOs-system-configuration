@@ -43,6 +43,8 @@
     libva-utils
     markdown-oxide
     xdg-utils
+    vulkan-tools
+    gnomeExtensions.tracker
     
     # GUI
     swww
@@ -64,6 +66,7 @@
     sioyek
     komikku
     gtk4
+    gtk3
     iwgtk
     goodvibes
 
