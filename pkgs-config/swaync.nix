@@ -338,6 +338,11 @@
       .widget-menubar>box>.menu-button-bar>.end>button label {
         background-color: @base00;
       }
+
+      .widget-menubar > box > .menu-button-bar > .end > button {
+        border: none;
+        background: transparent;
+      }
       
       .network-button>button>label,
       .bluetooth-button>button>label {

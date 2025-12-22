@@ -69,6 +69,7 @@
     gtk3
     iwgtk
     goodvibes
+    signal-desktop
 
   # Retroarch & cores
     (retroarch.withCores (cores: with cores; [
