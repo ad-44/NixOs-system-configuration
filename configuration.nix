@@ -91,25 +91,16 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   wget
-  niri
-  ly
   libnotify
   xwayland-satellite
-  networkmanager
-  blueman
   jq
   killall
-  gvfs
   pavucontrol
   nautilus
-  xdg-desktop-portal-wlr
-  xdg-desktop-portal
-  nix-ld
-  upower
-  powertop
-  tlp
   ffmpeg
   usbutils
+  net-tools
+  netcat-gnu
   mesa
   ];
     

@@ -10,29 +10,29 @@
     foot
     starship
     git
-    helix
+    # helix
     btop
-    yazi
-    spotify-player
+    # yazi
+    # spotify-player
     wev
     glow
     libsecret
-    aerc
+    # aerc
     w3m
     dante
     wl-clipboard
-    uv
+    # uv
     didyoumean
-    yt-dlp
-    less
+    # yt-dlp
+    # less
     pandoc
 
   # System
     gcr
     vala
     seahorse
-    hypridle
-    hyprlock
+    # hypridle
+    # hyprlock
     poweralertd
     brightnessctl
     texliveFull
@@ -44,32 +44,33 @@
     markdown-oxide
     xdg-utils
     vulkan-tools
-    gnomeExtensions.tracker
+    # gnomeExtensions.tracker
     
     # GUI
     swww
-    fuzzel
+    # fuzzel
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".twilight-official
-    swaynotificationcenter
+    # swaynotificationcenter
     spotify
-    waybar
-    mpv
+    # waybar
+    # mpv
     zed-editor
     qimgv
-    thunderbird
-    onlyoffice-desktopeditors
+    # thunderbird
+    # onlyoffice-desktopeditors
     gnupg
     passff-host
     pinentry-gnome3
     browserpass
-    clipse
-    sioyek
+    # clipse
+    # sioyek
     komikku
     gtk4
     gtk3
     iwgtk
     goodvibes
     signal-desktop
+    localsend
 
   # Retroarch & cores
     (retroarch.withCores (cores: with cores; [
@@ -85,10 +86,10 @@
   # Enable application that does not need further settings
   services.swww.enable = false;
   programs.spotify-player.enable = true;
-  services.network-manager-applet.enable = true;
+  # services.network-manager-applet.enable = true;
   programs.yazi.enable = true;
   programs.zed-editor.enable = true;
-  services.gnome-keyring.enable = false;
+  # services.gnome-keyring.enable = false;
   programs.onlyoffice.enable = true;
   programs.uv.enable = true;
   programs.sioyek.enable = true;
