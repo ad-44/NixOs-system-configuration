@@ -71,6 +71,7 @@
     goodvibes
     signal-desktop
     localsend
+    
 
   # Retroarch & cores
     (retroarch.withCores (cores: with cores; [
