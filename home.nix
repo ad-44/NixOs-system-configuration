@@ -71,6 +71,7 @@
     goodvibes
     signal-desktop
     localsend
+    anytype
     
 
   # Retroarch & cores
