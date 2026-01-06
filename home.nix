@@ -78,6 +78,8 @@
   # Retroarch & cores
     (retroarch.withCores (cores: with cores; [
       dolphin
+      gambatte
+      mgba
     ]))  
   ];
 
