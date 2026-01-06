@@ -110,7 +110,10 @@
   services.displayManager.ly.enable = true;
   programs.ssh.startAgent = false;
   programs.xwayland.enable = true;
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth= {
+    enable = true;
+    powerOnBoot = false;
+  };
   services.blueman.enable = true;
   services.gvfs.enable = true;
   programs.nix-ld.enable = true;

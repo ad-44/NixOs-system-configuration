@@ -4,6 +4,12 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
+    settings = {
+      editor.soft-wrap = {
+        enable = true;
+      };
+    };
+    
     languages = {
       language-server.texlab = with pkgs; {
         command = "${pkgs.texlab}/bin/texlab";
@@ -35,11 +41,33 @@
           ];
         };  
       };
+
       language-server.ltex = with pkgs; {
         command = "${pkgs.ltex-ls-plus}/bin/ltex-ls-plus";
         config.ltex.dictionary = "fr";
       };
-      language = [{
+
+      language-server.ruff = with pkgs; {
+        command = "${pkgs.ruff}/bin/ruff";
+        args = ["server"];
+      };
+
+      language-server.pyright = with pkgs; {
+        command = "${pkgs.pyright}/bin/pyright";
+        config = {
+          python.analysis = {
+            typeCheckingMode = "basic";
+          };
+        };
+      };
+
+      language-server.pylsp = {
+        command = "${pkgs.python313Packages.python-lsp-server}/bin/pylsp";
+        args = [];
+      };
+      
+      language = [
+        {
         name = "latex";
         language-servers = [
           "texlab"
@@ -47,7 +75,20 @@
         ];
         file-types = ["tex"];
         auto-format = true;
-      }];
+        }
+        
+        {
+        name = "python";
+        language-servers = [
+          "ruff"
+          # "pyright"
+          "pylsp"
+        ];
+        file-types = ["py"];
+        auto-format = true;   
+        }
+      ];
+         
     };
   };
 }

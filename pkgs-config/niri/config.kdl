@@ -119,9 +119,11 @@ layout {
     shadow {}
 
     tab-indicator {
-        active-color "#ed7c7b"
+        active-color "#eeeeee"
         inactive-color "#000000"
         width 4
+        gaps-between-tabs 4
+        corner-radius 5
     }
     
     struts {
@@ -259,13 +261,13 @@ binds {
     // Programs
     Mod+T hotkey-overlay-title="Open a Terminal" { spawn "foot"; }
     Mod+D hotkey-overlay-title="Open a dropdown Terminal" { spawn "foot" "-a" "dropdown"; }
-    Mod+S hotkey-overlay-title="Open Spotify TUI" { spawn-sh "foot spotify_player"; }
-    Mod+Shift+S hotkey-overlay-title="Open Spotify GUI" { spawn "spotify"; }
+    Mod+M hotkey-overlay-title="Open Spotify TUI" { spawn-sh "foot spotify_player"; }
+    Mod+Shift+M hotkey-overlay-title="Open Spotify GUI" { spawn "spotify"; }
     Mod+A hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+L hotkey-overlay-title="Lock the Screen" { spawn "hyprlock"; }
+    Super+P hotkey-overlay-title="Lock the Screen" { spawn "hyprlock"; }
     Super+Space hotkey-overlay-title="Open sway notification center" { spawn-sh "swaync-client -t -sw";}
     Super+E hotkey-overlay-title="Open file manager TUI" { spawn-sh "foot yazi"; }
-    Super+Shift+E hotkey-overlay-title="Open gui file manager GUI" { spawn "nautilus"; }
+    Super+Shift+E hotkey-overlay-title="Open file manager GUI" { spawn "nautilus"; }
     Super+X hotkey-overlay-title="Open clipboard manager" { spawn "foot" "-a" "clipse" "clipse"; }
 
     // Volume

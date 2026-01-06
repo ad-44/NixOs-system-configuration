@@ -45,6 +45,7 @@
     xdg-utils
     vulkan-tools
     # gnomeExtensions.tracker
+    python313Packages.python-lsp-server
     
     # GUI
     swww
@@ -100,6 +101,7 @@
   programs.less.enable = true;
   programs.yt-dlp.enable = true;
   programs.freetube.enable = true;
+  programs.fzf.enable = true;
 
   # USB mount
   services.udiskie.enable = true;
