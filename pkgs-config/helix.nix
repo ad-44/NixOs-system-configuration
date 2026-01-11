@@ -5,8 +5,10 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      editor.soft-wrap = {
-        enable = true;
+      editor= {
+        soft-wrap.enable = true;
+        idle-timeout = 0;
+        completion-trigger-len = 1;
       };
     };
     
@@ -65,6 +67,10 @@
         command = "${pkgs.python313Packages.python-lsp-server}/bin/pylsp";
         args = [];
       };
+
+      language-server.marksman = {
+        command = "${pkgs.marksman}/bin/marksman";
+      };
       
       language = [
         {
@@ -87,8 +93,16 @@
         file-types = ["py"];
         auto-format = true;   
         }
-      ];
-         
+
+        {
+        name = "markdown";
+        language-servers = [
+          "marksman"
+        ];
+        file-types = ["md"];
+        }
+        
+      ];   
     };
   };
 }

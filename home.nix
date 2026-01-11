@@ -45,7 +45,8 @@
     xdg-utils
     vulkan-tools
     # gnomeExtensions.tracker
-    python313Packages.python-lsp-server
+    # python313Packages.python-lsp-server
+    devenv
     
     # GUI
     swww
