@@ -6,7 +6,7 @@
     systemd.enable = true;
     settings = {
       mainbar = {
-        layer = "top";
+        layer = "overlay";
         exclusive = false;
         start_hidden = true;
         reload_style_on_change = true;
