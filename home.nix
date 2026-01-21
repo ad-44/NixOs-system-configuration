@@ -56,7 +56,7 @@
     spotify
     # waybar
     # mpv
-    zed-editor
+    # zed-editor
     qimgv
     # thunderbird
     # onlyoffice-desktopeditors
@@ -94,7 +94,7 @@
   programs.spotify-player.enable = true;
   # services.network-manager-applet.enable = true;
   programs.yazi.enable = true;
-  programs.zed-editor.enable = true;
+  # programs.zed-editor.enable = false;
   # services.gnome-keyring.enable = false;
   programs.onlyoffice.enable = true;
   programs.uv.enable = true;
@@ -136,6 +136,10 @@
   home.sessionVariables = {
     EDITOR = "hx";
     TERMINAL = "foot";
+  };
+
+  programs.sioyek.config = {
+    "page_separator_width" = "2";
   };
   
   home.stateVersion = "25.05";

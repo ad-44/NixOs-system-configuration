@@ -6,6 +6,7 @@
     enableCompletion = true;
     bashrcExtra = ''
       eval "$(starship init bash)"
+      eval "$(direnv hook bash)"
     '';
   };
 }

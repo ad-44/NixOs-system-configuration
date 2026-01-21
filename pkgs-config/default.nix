@@ -16,5 +16,7 @@
     ./mail.nix
     ./gpg-config.nix
     ./mimeapps.nix
+    ./direnv.nix
+    ./tmux.nix
   ];
 }
