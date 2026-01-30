@@ -86,7 +86,7 @@
         {
         name = "python";
         language-servers = [
-          "ruff"
+          # "ruff"
           # "pyright"
           "pylsp"
         ];

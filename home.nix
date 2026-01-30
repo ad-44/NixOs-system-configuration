@@ -74,6 +74,12 @@
     signal-desktop
     localsend
     anytype
+    brave
+
+    # Testing
+    vicinae
+    impala
+    bluetui
     
 
   # Retroarch & cores
