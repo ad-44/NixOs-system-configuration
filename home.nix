@@ -60,6 +60,7 @@
     vicinae
     impala
     bluetui
+    geary
     
 
   # Retroarch & cores
@@ -121,6 +122,7 @@
     TERMINAL = "foot";
   };
 
+  # Sioyek config
   programs.sioyek.config = {
     "page_separator_width" = "2";
   };
