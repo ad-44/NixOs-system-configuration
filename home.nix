@@ -33,6 +33,8 @@
     bc
     libva-utils
     markdown-oxide
+    marksman
+    mpls
     xdg-utils
     vulkan-tools
     devenv
@@ -55,12 +57,12 @@
     localsend
     anytype
     brave
+    gimp
 
     # Testing
     vicinae
     impala
     bluetui
-    geary
     
 
   # Retroarch & cores
@@ -89,6 +91,7 @@
   programs.yt-dlp.enable = true;
   programs.freetube.enable = true;
   programs.fzf.enable = true;
+  programs.element-desktop.enable = true;
 
   # USB mount
   services.udiskie.enable = true;

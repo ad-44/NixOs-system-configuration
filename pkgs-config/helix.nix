@@ -71,6 +71,11 @@
       language-server.marksman = {
         command = "${pkgs.marksman}/bin/marksman";
       };
+
+      language-server.mpls = {
+        command = "${pkgs.mpls}/bin/mpls";
+        args = [];
+      };
       
       language = [
         {
@@ -98,8 +103,10 @@
         name = "markdown";
         language-servers = [
           "marksman"
+          "mpls"
         ];
         file-types = ["md"];
+        auto-format = true;
         }
         
       ];   

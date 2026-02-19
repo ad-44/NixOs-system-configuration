@@ -48,7 +48,10 @@
       };
     };
   };
-  
+
+  # Enable this service to discover other devices on my network
+  services.avahi.enable = false;
+
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
