@@ -19,6 +19,7 @@
     wl-clipboard
     didyoumean
     pandoc
+    rustlings
 
   # System
     gcr
@@ -58,9 +59,9 @@
     anytype
     brave
     gimp
+    valent
 
     # Testing
-    vicinae
     impala
     bluetui
     
