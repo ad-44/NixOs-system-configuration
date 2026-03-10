@@ -6,10 +6,8 @@
 
   home.packages = with pkgs; [
   # Terminal
-    neofetch
-    foot
-    starship
-    git
+    fastfetch
+    #foot
     btop
     wev
     glow
@@ -50,8 +48,8 @@
     pinentry-gnome3
     browserpass
     komikku
-    gtk4
-    gtk3
+    # gtk4
+    # gtk3
     iwgtk
     goodvibes
     signal-desktop
@@ -60,6 +58,7 @@
     brave
     gimp
     valent
+    signaturepdf
 
     # Testing
     impala
@@ -93,6 +92,7 @@
   programs.freetube.enable = true;
   programs.fzf.enable = true;
   programs.element-desktop.enable = true;
+
 
   # USB mount
   services.udiskie.enable = true;

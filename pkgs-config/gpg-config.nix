@@ -20,6 +20,6 @@
   };
   
   programs.password-store.settings = {
-    PASSWORD_STOR_DIR = "~/.password-store";
+    PASSWORD_STORE_DIR = "~/.local/share/password-store";
   };
 }

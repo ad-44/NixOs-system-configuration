@@ -50,7 +50,10 @@
   };
 
   # Enable this service to discover other devices on my network
-  services.avahi.enable = false;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
@@ -71,9 +74,12 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = {
+  services.xserver = {
+    enable = false;
+    xkb = {
     layout = "fr";
     variant = "";
+    };
   };
 
   # Configure console keymap
@@ -109,7 +115,7 @@
     
   # Programs and services enable
   programs.niri.enable = true;
-  programs.git.enable = true;
+  programs.git.enable = false;
   services.displayManager.ly.enable = true;
   programs.ssh.startAgent = false;
   programs.xwayland.enable = true;
@@ -148,6 +154,7 @@
     xdgOpenUsePortal = true;
     extraPortals = with pkgs; [
       xdg-desktop-portal-wlr
+      xdg-desktop-portal
     ];
     config = {
       common = {
@@ -185,6 +192,7 @@
   };
 
   nix.settings.auto-optimise-store = true;
+  nix.settings.max-jobs = "auto";
 
   # Fix uv python ssl.SSLCertVerificationError
   environment.etc.certfile = {
