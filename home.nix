@@ -63,6 +63,9 @@
     # Testing
     impala
     bluetui
+    alsa-scarlett-gui
+    ardour
+    audacity
     
 
   # Retroarch & cores

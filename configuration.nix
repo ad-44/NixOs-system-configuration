@@ -111,6 +111,7 @@
   net-tools
   netcat-gnu
   mesa
+  spectre-meltdown-checker
   ];
     
   # Programs and services enable
@@ -144,7 +145,7 @@
     
   stylix = {
     enable = true;
-    image = ./Wallpapers/wallpaper.jpg;
+    image = ./Wallpapers/yol.jpg;
     polarity = "dark";
     override = {base00 = "000000";};
    };

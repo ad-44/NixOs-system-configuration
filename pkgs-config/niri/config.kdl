@@ -135,7 +135,7 @@ layout {
 }
 
 // Spawn at startup configuration
-spawn-sh-at-startup "swww-daemon && swww img ~/system-flake/Wallpapers/wallpaper.jpg"
+spawn-sh-at-startup "swww-daemon && swww img ~/system-flake/Wallpapers/yol.jpg"
 spawn-sh-at-startup "systemctl --user start overview-waybar.service"
 spawn-sh-at-startup "clipse -listen"
 
