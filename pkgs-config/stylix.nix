@@ -36,4 +36,10 @@
     name = "Bibata-Original-Classic";
     size = 16;
   };
+  
+  stylix.targets = {
+    vscode.enable = true;
+    swaync.enable = true;
+  };
+  
 }  

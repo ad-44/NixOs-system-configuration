@@ -8,7 +8,15 @@
       editor= {
         soft-wrap.enable = true;
         idle-timeout = 0;
+        completion-timeout = 5;
         completion-trigger-len = 1;
+      };
+      keys.normal = {
+        space.l.l = ["extend_line" "yank_to_clipboard" ":sh hx-to-repl"];
+        space.l.f = ["select_all" "yank_to_clipboard" ":sh hx-to-repl"];
+      };
+      keys.select = {
+        space.l.s = ["yank_to_clipboard" ":sh hx-to-repl"];
       };
     };
     

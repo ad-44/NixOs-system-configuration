@@ -146,6 +146,7 @@
   stylix = {
     enable = true;
     image = ./Wallpapers/yol.jpg;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
     polarity = "dark";
     override = {base00 = "000000";};
    };

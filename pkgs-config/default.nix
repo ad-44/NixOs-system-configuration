@@ -17,7 +17,7 @@
     ./gpg-config.nix
     ./mimeapps.nix
     ./direnv.nix
-    ./tmux.nix
     ./vscodium.nix
+    ./tmux/tmux.nix
   ];
 }

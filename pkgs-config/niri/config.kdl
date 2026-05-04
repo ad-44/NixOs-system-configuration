@@ -111,7 +111,7 @@ layout {
 
     border {
         width 1
-        active-color "#ed7c7b"
+        active-color "#c0a36e"
         inactive-color "#000000"
         urgent-color "#9b0000"
     }

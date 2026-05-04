@@ -5,7 +5,10 @@
     enable = true;
     package = pkgs.vscodium;
     profiles.default.extensions = with pkgs.vscode-extensions; [
-      
+      ms-python.black-formatter
+      ms-python.python
+      njpwerner.autodocstring
+      mkhl.direnv
     ];
   };
 }

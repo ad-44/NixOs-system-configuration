@@ -7,7 +7,6 @@
   home.packages = with pkgs; [
   # Terminal
     fastfetch
-    #foot
     btop
     wev
     glow
@@ -18,6 +17,9 @@
     didyoumean
     pandoc
     rustlings
+    poppler-utils
+    sttr
+    visidata
 
   # System
     gcr
@@ -58,7 +60,8 @@
     brave
     gimp
     valent
-    signaturepdf
+    imagemagick
+    dolphin-emu
 
     # Testing
     impala

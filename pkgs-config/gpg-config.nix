@@ -20,6 +20,7 @@
   };
   
   programs.password-store.settings = {
-    PASSWORD_STORE_DIR = "~/.local/share/password-store";
+    PASSWORD_STORE_DIR = "/home/antoine/.local/share/password-store";
   };
+  services.pass-secret-service.storePath = "/home/antoine/.local/share/password-store";
 }
