@@ -9,6 +9,8 @@
       ms-python.python
       njpwerner.autodocstring
       mkhl.direnv
+      ltex-plus.vscode-ltex-plus
+      james-yu.latex-workshop
     ];
   };
 }
