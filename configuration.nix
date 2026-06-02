@@ -29,6 +29,7 @@
   
   # Enabling flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.channel.enable = false;
 
   # Enable networking
   networking = {
@@ -162,9 +163,9 @@
       common = {
         default = [ "wlr" ];
       };
-      niri = {
-        default = [ "wlr"];
-      };
+      # niri = {
+      #   default = [ "wlr"];
+      # };
     };
   };
     

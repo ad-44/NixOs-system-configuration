@@ -41,7 +41,7 @@
     devenv
     
     # GUI
-    swww
+    awww
     inputs.zen-browser.packages."${stdenv.hostPlatform.system}".twilight-official
     spotify
     qimgv
@@ -76,6 +76,7 @@
       dolphin
       gambatte
       mgba
+      mupen64plus
     ]))  
   ];
 
