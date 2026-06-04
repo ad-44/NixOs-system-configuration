@@ -86,7 +86,7 @@
   ];
 
   # Enable application that does not need further settings
-  services.swww.enable = false;
+  services.awww.enable = false;
   programs.spotify-player.enable = true;
   programs.yazi.enable = true;
   programs.onlyoffice.enable = true;
@@ -121,6 +121,9 @@
       scaleY = 16;  
     };
   };
+
+  # fix yazi legacy shell wrapper name
+  programs.yazi.shellWrapperName = "y";
   
   # Niri config vi symlink
   home.file = {

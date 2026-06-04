@@ -135,7 +135,7 @@ layout {
 }
 
 // Spawn at startup configuration
-spawn-sh-at-startup "swww-daemon && swww img ~/system-flake/Wallpapers/yol.jpg"
+spawn-sh-at-startup "awww-daemon && awww img ~/system-flake/Wallpapers/yol.jpg"
 spawn-sh-at-startup "systemctl --user start overview-waybar.service"
 spawn-sh-at-startup "clipse -listen"
 
@@ -150,7 +150,7 @@ animations {}
 
     // Set wallpaper in overview mode
 layer-rule{
-    match namespace="^swww-daemon$"
+    match namespace="^awww-daemon$"
     place-within-backdrop true
 }
 
