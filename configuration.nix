@@ -129,6 +129,7 @@
   services.gvfs.enable = true;
   programs.nix-ld.enable = true;
   services.udisks2.enable = true;
+  programs.gnome-disks.enable = true;
 
     #finger print scanner
   services.fprintd = {

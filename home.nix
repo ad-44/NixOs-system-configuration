@@ -64,11 +64,13 @@
     dolphin-emu
 
     # Testing
-    impala
-    bluetui
     alsa-scarlett-gui
     ardour
     audacity
+    links2
+    tor-browser
+    lite-xl
+    comaps
     
 
   # Retroarch & cores
@@ -77,6 +79,7 @@
       gambatte
       mgba
       mupen64plus
+      genesis-plus-gx
     ]))  
   ];
 
@@ -99,7 +102,6 @@
   programs.freetube.enable = true;
   programs.fzf.enable = true;
   programs.element-desktop.enable = true;
-
 
   # USB mount
   services.udiskie.enable = true;
