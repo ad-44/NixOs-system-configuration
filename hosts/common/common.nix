@@ -52,6 +52,7 @@
   netcat-gnu
   curl
   git  
+  bc
   ];
 
   services = {
