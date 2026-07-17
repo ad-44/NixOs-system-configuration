@@ -1,4 +1,4 @@
-{ pkgs, config, lib, ... }:
+{ inputs, pkgs, config, lib, zen-browser, ... }:
 
 {
   programs.zen-browser = {

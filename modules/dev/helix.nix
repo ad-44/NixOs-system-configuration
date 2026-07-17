@@ -12,11 +12,11 @@
         completion-trigger-len = 1;
       };
       keys.normal = {
-        space.l.l = ["extend_line" "yank_to_clipboard" ":sh hx-to-repl"];
-        space.l.f = ["select_all" "yank_to_clipboard" ":sh hx-to-repl"];
+        space.l.l = ["extend_line" "yank_to_clipboard" ":sh hx-to-repl"]; #tmux-python : copy paste line into the REPL pane
+        space.l.f = ["select_all" "yank_to_clipboard" ":sh hx-to-repl"];  #tmux-python : copy paste all file into the REPL pane
       };
       keys.select = {
-        space.l.s = ["yank_to_clipboard" ":sh hx-to-repl"];
+        space.l.s = ["yank_to_clipboard" ":sh hx-to-repl"]; #tmux-python : copy paste selected item into REPL pane
       };
     };
     

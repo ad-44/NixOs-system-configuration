@@ -1,8 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  programs.qt = {
+  qt = {
     enable = true;
-    plateformTheme.name = "gtk4";
   };
 }

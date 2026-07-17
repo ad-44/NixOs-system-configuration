@@ -271,14 +271,14 @@ binds {
     Super+X hotkey-overlay-title="Open clipboard manager" { spawn "foot" "-a" "clipse" "clipse"; }
 
     // Volume
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ && bash ~/system-flake/scripts/volume_notif.sh"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1- && bash ~/system-flake/scripts/volume_notif.sh"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && bash ~/system-flake/scripts/mute-volume.sh" ; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && bash ~/system-flake/scripts/mute-mic.sh"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ && bash ~/system-flake/modules/desktop_environment/scripts/volume_notif.sh"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1- && bash ~/system-flake/modules/desktop_environment/scripts/volume_notif.sh"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && bash ~/system-flake/modules/desktop_environment/scripts/mute-volume.sh" ; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && bash ~/system-flake/modules/desktop_environment/scripts/mute-mic.sh"; }
 
     // Brightness
-    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set +10% && bash ~/system-flake/scripts/brightness_notif.sh"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 10%- && bash ~/system-flake/scripts/brightness_notif.sh"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set +10% && bash ~/system-flake/modules/desktop_environment/scripts/brightness_notif.sh"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 10%- && bash ~/system-flake/modules/desktop_environment/scripts/brightness_notif.sh"; }
 
     // Overview
     Mod+O repeat=false { toggle-overview; }

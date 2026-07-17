@@ -3,8 +3,11 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
-    home-manager.url = "github:nix-community/home-manager/release-26.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    
+    home-manager = {
+      url = "github:nix-community/home-manager/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }; 
     
     stylix = {
       url = "github:nix-community/stylix/release-26.05";
@@ -17,34 +20,49 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, stylix, zen-browser, ... }@inputs: {
-    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-      specialArgs = { inherit inputs; };
-      modules = [
-         ./configuration.nix
+  outputs = inputs@{
+    self,
+    nixpkgs,
+    home-manager,
+    stylix,
+    zen-browser,
+    ...
+  }:
+  {  
+    nixosConfigurations = {
 
-## This overlay is here to allow more memory for anytype to build (NODE/V8 heap limit of ~2GB isn't enough)
-         {
-    nixpkgs.overlays = [
-      (final: prev: {
-        anytype = prev.anytype.overrideAttrs (old: {
-          preBuild = (old.preBuild or "") + ''
-            export NODE_OPTIONS="--max-old-space-size=4096"
-          '';
-        });
-      })
-    ];
-  }         
-         stylix.nixosModules.stylix
-         home-manager.nixosModules.home-manager
-         {
-           home-manager.useGlobalPkgs = true ;
-           home-manager.useUserPackages = true ;
-           home-manager.users.antoine = import ./home.nix;
-           home-manager.extraSpecialArgs = { inherit inputs;};
-         }
+      #Honor laptop 
+      honor-laptop = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+        };
+        
+        modules = [
+          ./hosts/honor-laptop/configuration.nix
+
+          stylix.nixosModules.stylix
+          home-manager.nixosModules.home-manager
+
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+            
+              users.antoine = import ./home/hm-honor-laptop.nix;
+
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+            };
+          }
+
+          #Overlays
+          (import ./overlays)
+        
         ];
-    }; 
-
-  };
+      };
+      
+    };
+  };  
+  
 }

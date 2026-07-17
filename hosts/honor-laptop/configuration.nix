@@ -8,9 +8,10 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../common/common.nix
     ];
 
-  # Bootloader (this laptop is using UEFI, hence grub is not needed)
+  # Bootloader (honor-laptop is using UEFI, hence grub is not needed)
   boot.loader.grub.enable = false;
   #boot.loader.grub.device = "/dev/sda";
   #boot.loader.grub.useOSProber = true;
@@ -20,17 +21,13 @@
   # Configure hardware graphics
   hardware.graphics.enable = true;
   
-  networking.hostName = "laptop"; # Define your hostname.
+  networking.hostName = "honor-laptop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   
-  # Enabling flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.channel.enable = false;
-
   # Enable networking
   networking = {
     networkmanager = {
@@ -50,28 +47,9 @@
     };
   };
 
-  # Enable this service to discover other devices on my network
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-  };
-
-  # Set your time zone.
-  time.timeZone = "Europe/Paris";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "fr_FR.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "fr_FR.UTF-8";
-    LC_IDENTIFICATION = "fr_FR.UTF-8";
-    LC_MEASUREMENT = "fr_FR.UTF-8";
-    LC_MONETARY = "fr_FR.UTF-8";
-    LC_NAME = "fr_FR.UTF-8";
-    LC_NUMERIC = "fr_FR.UTF-8";
-    LC_PAPER = "fr_FR.UTF-8";
-    LC_TELEPHONE = "fr_FR.UTF-8";
-    LC_TIME = "fr_FR.UTF-8";
+  networking.firewall = {
+    allowedTCPPorts = [ 53317 ];
+    allowedUDPPorts = [ 53317 ];
   };
 
   # Configure keymap in X11
@@ -100,38 +78,38 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  wget
-  libnotify
   xwayland-satellite
-  jq
-  killall
-  pavucontrol
-  nautilus
-  ffmpeg
-  usbutils
-  net-tools
-  netcat-gnu
-  mesa
-  spectre-meltdown-checker
   ];
     
   # Programs and services enable
-  programs.niri.enable = true;
-  programs.git.enable = false;
-  services.displayManager.ly.enable = true;
-  programs.ssh.startAgent = false;
-  programs.xwayland.enable = true;
+  programs = {
+    niri.enable = true;
+    xwayland.enable = true;
+    gnome-disks.enable = true;
+    nix-ld.enable = true;
+    gphoto2.enable = true;
+  };
+
+  services = {
+    blueman.enable = true;
+    gvfs.enable = true;
+    upower.enable = true;
+    displayManager.ly.enable = true;
+  };
+  
+  # Bluetooth is off on boot
   hardware.bluetooth= {
     enable = true;
     powerOnBoot = false;
   };
-  services.blueman.enable = true;
-  services.gvfs.enable = true;
-  programs.nix-ld.enable = true;
-  services.udisks2.enable = true;
-  programs.gnome-disks.enable = true;
 
-    #finger print scanner
+  # Enable this service to discover other devices on my network
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
+  
+  # Finger print scanner (does not work for honor-laptop hardware but I let it for others just in case)
   services.fprintd = {
     enable = false;
     package = pkgs.fprintd-tod;
@@ -140,19 +118,17 @@
       driver = pkgs.libfprint-2-tod1-goodix;
     };
   };
-  
-  services.upower = {
-    enable = true;
-  };
-    
+
+  # Enabling stylix to change the colorscheme of my computer (kanagawa here)     
   stylix = {
     enable = true;
-    image = ./Wallpapers/yol.jpg;
+    image = ../../modules/desktop/wallpapers/yol.jpg ;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
     polarity = "dark";
     override = {base00 = "000000";};
    };
-
+   
+  # Portal configuration
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
@@ -178,25 +154,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  # Fonts packages 
-   fonts.packages = with pkgs; [
-    fira-code
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.roboto-mono
-  ];
-  
-  # Reducing disk usage
-  boot.loader.systemd-boot.configurationLimit = 10;
-
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
-  };
-
-  nix.settings.auto-optimise-store = true;
-  nix.settings.max-jobs = "auto";
 
   # Fix uv python ssl.SSLCertVerificationError
   environment.etc.certfile = {
