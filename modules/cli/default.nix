@@ -17,6 +17,7 @@
     didyoumean
     pandoc
     sttr
+    pinentry-tty
   ];
 
   programs = {

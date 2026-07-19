@@ -2,9 +2,6 @@
 
 {
   services.gpg-agent = {
-    pinentry = {
-      package = pkgs.pinentry-gnome3;
-    };
     extraConfig = ''
       no-allow-external-cache  
     '';

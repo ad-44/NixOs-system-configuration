@@ -10,5 +10,13 @@
     ../modules/cli
   ];
 
+  # Defining pinetry for gpgagent
+
+  services = {
+    gpg-agent = {
+      pinentry.package = pkgs.pinentry-tty;
+    };
+  };
+
   home.stateVersion = "25.05";
 }
