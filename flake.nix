@@ -18,6 +18,10 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL/main";
+    };
   };
 
   outputs = inputs@{
@@ -62,6 +66,39 @@
         ];
       };
       
+      # WSL
+      wsl = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+        };
+
+        system = "x86_64-linux";
+  
+        modules = [
+	        ./hosts/wsl/configuration.nix
+
+          inputs.nixos-wsl.nixosModules.default
+          stylix.nixosModules.stylix
+
+          home-manager.nixosModules.home-manager
+
+          {
+            home-manager = {
+	            useGlobalPkgs = true;
+              useUserPackages = true;
+
+              users.antoine = import ./home/hm-wsl.nix;
+
+              extraSpecialArgs = {
+                inherit inputs;
+              };
+            };
+          }
+
+        ];
+
+      };
+
     };
   };  
   
