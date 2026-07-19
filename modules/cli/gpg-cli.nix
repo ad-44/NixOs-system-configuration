@@ -20,7 +20,7 @@
       enableSshSupport = true;
     };
 
-    pass-secret-services = {
+    pass-secret-service = {
       storePath = "/home/antoine/.local/share/password-store";
     };
              
