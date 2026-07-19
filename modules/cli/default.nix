@@ -4,6 +4,7 @@
   imports = [
     ./bash.nix
     ./foot.nix
+    ./gpg-cli.nix
     ./starship.nix
   ];
 

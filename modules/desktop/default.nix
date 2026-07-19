@@ -3,7 +3,7 @@
 {
   imports = [
     ./fuzzel.nix
-    ./gpg-config.nix
+    ./gpg-desktop.nix
     ./hypridle.nix
     ./hyprlock.nix
     ./mail.nix

@@ -335,7 +335,7 @@
         padding: 0 0 10px 0;
       }
 
-      .widget-menubar>box>.menu-button-bar>.end>button label {
+      .widget-menubar> box > .menu-button-bar > .end > button label {
         background-color: @base00;
       }
 
