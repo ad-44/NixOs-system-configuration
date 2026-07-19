@@ -4,11 +4,6 @@
   programs = {
     gpg.enable = true;
     
-    gpg-agent = {
-      enable = true;
-      enableSshSupport = true;
-    };
-
     password-store = {
       enable = true;
       settings = {
@@ -20,12 +15,15 @@
 
   services = {
     
-    password-store = {
-      settings = {
-        storePath = "/home/antoine/.local/share/password-store";    
-      };
+    gpg-agent = {
+      enable = true;
+      enableSshSupport = true;
     };
-      
+
+    pass-secret-services = {
+      storePath = "/home/antoine/.local/share/password-store";
+    };
+             
   };
   
 }
