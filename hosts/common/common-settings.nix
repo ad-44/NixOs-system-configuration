@@ -41,22 +41,4 @@
   nix.settings.auto-optimise-store = true;
   nix.settings.max-jobs = "auto";
 
-  # Common packages and services
-  environment.systemPackages = with pkgs; [
-  wget
-  vim
-  jq
-  killall
-  usbutils
-  net-tools
-  netcat-gnu
-  curl
-  git  
-  bc
-  ];
-
-  services = {
-    udisks2.enable = true;
-  };
-  
-}
+  }

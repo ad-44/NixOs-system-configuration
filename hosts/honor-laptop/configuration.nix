@@ -8,7 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../common/common.nix
+      ../common/common-pkgs.nix
+      ../common/common-settings.nix
     ];
 
   # Bootloader (honor-laptop is using UEFI, hence grub is not needed)
