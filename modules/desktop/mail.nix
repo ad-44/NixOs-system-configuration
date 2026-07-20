@@ -45,11 +45,11 @@
       };
     };
     smtp = {
-      host = "smtp-tls.gmail.com";
+      host = "smtp.gmail.com";
       port = 465;
       tls = {
         enable = true;
-        useStartTls = true;
+        useStartTls = false;
       };
     };
     passwordCommand = "pass show mail/gmail | head -n 1";

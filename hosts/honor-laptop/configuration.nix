@@ -96,6 +96,7 @@
     gvfs.enable = true;
     upower.enable = true;
     displayManager.ly.enable = true;
+    usbmuxd.enable = true;
   };
   
   # Bluetooth is off on boot

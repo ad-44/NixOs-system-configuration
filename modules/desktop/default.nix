@@ -35,6 +35,8 @@
     browserpass
     iwgtk
     eog
+    libimobiledevice
+    ifuse
   ];
 
   programs = {
@@ -44,6 +46,7 @@
             "page_separator_width" = "2";
           };
         };
+    quickshell.enable = true;
   };
   
   services = {
