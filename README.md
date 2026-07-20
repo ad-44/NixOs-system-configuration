@@ -7,6 +7,7 @@ This repository contains my laptop Nixos configuration.
 Nixos + Home Manager as a nix module + Niri windows manager.
 
 ## Tree
+~~~bash
 .
 ├── flake.lock
 ├── flake.nix
@@ -71,7 +72,7 @@ Nixos + Home Manager as a nix module + Niri windows manager.
 ├── overlays
 │   └── default.nix
 └── README.md
-
+~~~
 ### Home
 Where home manager is configured for all hosts.
 
