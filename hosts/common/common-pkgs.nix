@@ -4,6 +4,7 @@
   
   # Common packages and services
   environment.systemPackages = with pkgs; [
+  wl-clipboard
   wget
   vim
   jq

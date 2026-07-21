@@ -15,7 +15,6 @@
   ];
 
   home.packages = with pkgs; [
-    wl-clipboard
     poppler-utils
     gcr
     vala
