@@ -1,37 +1,8 @@
 { pkgs, config, lib, ... }:
 
 {
-  programs.thunderbird = {
-    enable = true;
-
-    settings = {
-      "privacy.donottrackheader.enabled" = true;
-    };
-
-    profiles.Gmail = {
-      isDefault = true;
-    };
-  };
-
-  programs.aerc = {
-    enable = true;
-    extraConfig = {
-      general = {
-        unsafe-accounts-conf = true;
-        term = "foot";
-      };
-      viewer = {
-        pager = "glow -p";
-      };
-      filters = {
-        "text/plain" = "glow -p";
-        "text/html" = "glow -p";
-      };
-    };
-  };
-  
+ 
   accounts.email.accounts.Gmail = {
-    thunderbird.enable = true;
     primary = true;
     realName = "Antoine Debille";
     address = "antoine.debille@gmail.com";
@@ -39,6 +10,7 @@
     imap = {
       host = "imap.gmail.com";
       port = 993;
+      authentication = "xoauth2";
       tls = {
         enable = true;
         useStartTls = false;
@@ -47,6 +19,7 @@
     smtp = {
       host = "smtp.gmail.com";
       port = 465;
+      authentication = "xoauth2";
       tls = {
         enable = true;
         useStartTls = false;
@@ -57,8 +30,6 @@
   };
 
   accounts.email.accounts.University = {
-    aerc.enable = true;
-    thunderbird.enable = true;
     primary = false;
     realName = "Antoine Debille";
     address = "antoine.debille@univ-nantes.fr";

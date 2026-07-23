@@ -6,11 +6,11 @@
     ./gpg-desktop.nix
     ./hypridle.nix
     ./hyprlock.nix
-    ./mail.nix
     ./mimeapps.nix
     ./qt.nix
     ./stylix.nix
     ./swaync.nix
+    ./thunderbird.nix
     ./waybar.nix
   ];
 

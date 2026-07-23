@@ -2,9 +2,11 @@
 
 {
   imports = [
+    ./aerc.nix
     ./bash.nix
     ./foot.nix
     ./gpg-cli.nix
+    ./mail.nix
     ./starship.nix
   ];
 
@@ -17,6 +19,7 @@
     didyoumean
     pandoc
     sttr
+    oauth2l
   ];
 
   programs = {
