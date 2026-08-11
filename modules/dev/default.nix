@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -7,6 +7,7 @@
     ./helix.nix
     ./tmux/tmux.nix
     ./vscodium.nix
+    ./zed-editor.nix
   ];
 
   home.packages = with pkgs; [
@@ -20,6 +21,8 @@
     marksman
     mpls
     devenv
+    nil
+    nixd
   ];
 
   programs = {

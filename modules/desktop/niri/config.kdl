@@ -89,16 +89,15 @@ layout {
     center-focused-column "never"
 
     preset-column-widths {
-        proportion 0.33333
+        proportion 0.25
         proportion 0.5
-        proportion 0.66667
-
+        proportion 0.75
     }
 
     preset-window-heights {
-        proportion 0.33333
+        proportion 0.25
         proportion 0.5
-        proportion 0.66667
+        proportion 0.75
      }
 
     default-column-width { proportion 0.5; }
@@ -119,11 +118,12 @@ layout {
     shadow {}
 
     tab-indicator {
-        active-color "#eeeeee"
+        active-color "#7e9cd8"
         inactive-color "#000000"
-        width 4
+        width 6
         gaps-between-tabs 4
         corner-radius 5
+        place-within-column
     }
     
     struts {

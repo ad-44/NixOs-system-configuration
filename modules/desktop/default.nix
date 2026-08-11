@@ -43,8 +43,14 @@
           enable = true;
           config = {
             "page_separator_width" = "2";
+
+            startup_commands = [
+              "toggle_custom_color"
+            ];
+            
           };
         };
+        
     quickshell.enable = true;
   };
   
