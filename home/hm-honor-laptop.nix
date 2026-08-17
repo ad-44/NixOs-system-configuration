@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, lib, zen-browser, ... }:
+{ pkgs, ... }:
 
 {
   home.username = "antoine";

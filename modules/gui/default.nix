@@ -1,9 +1,8 @@
-{ inputs, config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
 
   imports = [
-    inputs.zen-browser.homeModules.twilight-official
     ./zen-browser.nix
   ];
   
