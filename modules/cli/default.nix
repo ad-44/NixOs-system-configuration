@@ -1,5 +1,8 @@
-{config, pkgs, ... }:
+{pkgs, inputs, ... }:
 
+let
+  unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
+in
 {
   imports = [
     ./aerc.nix
@@ -20,7 +23,9 @@
     pandoc
     sttr
     oauth2l
+    unstable.spotatui
   ];
+
 
   programs = {
     less.enable = true;
@@ -31,6 +36,5 @@
       enable = true;
       shellWrapperName = "y"; #fix legacy shell wrapper name
     };
-    spotify-player.enable = true;
   };
 }
