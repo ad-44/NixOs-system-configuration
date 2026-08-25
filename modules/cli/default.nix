@@ -1,8 +1,5 @@
 {pkgs, inputs, ... }:
 
-let
-  unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
-in
 {
   imports = [
     ./aerc.nix
@@ -23,7 +20,7 @@ in
     pandoc
     sttr
     oauth2l
-    unstable.spotatui
+    inputs.spotatui.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
 

@@ -17,6 +17,7 @@
     gimp
     valent
     tor-browser
+    synology-drive-client
   ];
 
     

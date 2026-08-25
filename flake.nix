@@ -23,6 +23,12 @@
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/main";
     };
+
+    spotatui = {
+      url = "github:LargeModGames/spotatui";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = inputs@{
