@@ -1,4 +1,4 @@
-{ inputs, config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Time zone and internationalisation properties
@@ -41,4 +41,4 @@
   nix.settings.auto-optimise-store = true;
   nix.settings.max-jobs = "auto";
 
-  }
+}

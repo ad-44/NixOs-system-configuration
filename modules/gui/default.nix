@@ -1,23 +1,30 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
+let
+  unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.system;
+    config.allowUnfree = true;
+  };
+in
 {
 
   imports = [
     ./zen-browser.nix
   ];
-  
+
   home.packages = with pkgs; [
+    unstable.anytype
     spotify
     komikku
     goodvibes
     signal-desktop
     localsend
-    anytype
     brave
     gimp
     valent
     tor-browser
     synology-drive-client
+    tauon
   ];
 
     

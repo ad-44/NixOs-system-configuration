@@ -36,6 +36,8 @@
     eog
     libimobiledevice
     ifuse
+    vicinae
+    simple-scan
   ];
 
   programs = {
@@ -68,7 +70,7 @@
       };
     };
 
-        
+           
   };
 
   # Niri symlink config

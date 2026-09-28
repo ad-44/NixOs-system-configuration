@@ -20,7 +20,6 @@
     pandoc
     sttr
     oauth2l
-    inputs.spotatui.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
 

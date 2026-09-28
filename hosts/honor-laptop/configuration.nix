@@ -69,7 +69,7 @@
   users.users.antoine = {
     isNormalUser = true;
     description = "Antoine";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "scanner" "lp" ];
     packages = with pkgs; [];
   };
 
@@ -109,7 +109,22 @@
   services.avahi = {
     enable = true;
     nssmdns4 = true;
+    openFirewall = true;
   };
+
+  # Enabling printers and scanners
+  services.printing = {
+    enable = true; #autodiscovery for network
+    drivers = with pkgs; [
+      cups-filters
+      cups-browsed
+      gutenprint
+    ];
+  };
+
+  services.ipp-usb.enable = true; #autodiscovery for usb
+  programs.system-config-printer.enable = true; #GUI for configuring printers
+  hardware.sane.enable = true; #Scanner support
   
   # Finger print scanner (does not work for honor-laptop hardware but I let it for others just in case)
   services.fprintd = {
